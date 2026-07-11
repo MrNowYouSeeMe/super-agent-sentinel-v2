@@ -14,6 +14,33 @@ type CaseEvent = {
   note: string;
 };
 
+type ResourceAnalysis = {
+  resource_id: string;
+  data_quality: {
+    state: string;
+    score: number;
+  };
+  liquidity: {
+    estimated_runway_minutes: number | null;
+    shortage_eta_low_minutes: number | null;
+    shortage_eta_high_minutes: number | null;
+    shortage_probability_60m: number;
+    confidence: number;
+  };
+  anomaly: {
+    score: number;
+  };
+  ml_prediction: {
+    model_version: string;
+    anomaly_probability: number;
+    shortage_probability_60m: number;
+    notable_signals: string[];
+  };
+  fused_shortage_probability_60m: number;
+  fused_anomaly_score: number;
+  fused_confidence: number;
+};
+
 type Result = {
   scenario: Scenario;
   analysis: {
@@ -26,6 +53,7 @@ type Result = {
       recommended_action: string;
       safe_boundary: string;
     };
+    resources: ResourceAnalysis[];
     explanation: string;
     evidence: string[];
     possible_normal_context: string[];
@@ -40,6 +68,14 @@ type Result = {
 };
 
 const API_BASE = "http://127.0.0.1:8000/api/v1";
+const pct = (value: number) => `${Math.round(value * 100)}%`;
+
+function runwayText(resource: ResourceAnalysis) {
+  const low = resource.liquidity.shortage_eta_low_minutes;
+  const high = resource.liquidity.shortage_eta_high_minutes;
+  if (low === null || high === null) return "No burn";
+  return `${low}-${high} min`;
+}
 
 export default function App() {
   const [scenarios, setScenarios] = useState<Scenario[]>([]);
@@ -79,8 +115,8 @@ export default function App() {
         <h1>Multi-provider MFS liquidity and anomaly decision support</h1>
         <p>
           Shared physical cash stays separate from bKash, Nagad, and Rocket balances.
-          The system estimates provider-specific shortage windows, reduces confidence
-          when data is stale or conflicting, and routes only safe human-review actions.
+          Phase 2 adds a dataset-ready local model layer, ML evidence, fused scores,
+          and safer confidence handling before human review.
         </p>
       </header>
 
@@ -112,7 +148,7 @@ export default function App() {
               <div><dt>Classification</dt><dd>{result.analysis.decision.classification}</dd></div>
               <div><dt>Severity</dt><dd>{result.analysis.decision.severity}</dd></div>
               <div><dt>Affected resource</dt><dd>{result.analysis.decision.affected_resource}</dd></div>
-              <div><dt>Confidence</dt><dd>{Math.round(result.analysis.decision.confidence * 100)}%</dd></div>
+              <div><dt>Confidence</dt><dd>{pct(result.analysis.decision.confidence)}</dd></div>
               <div><dt>Human review</dt><dd>{result.analysis.decision.human_review_required ? "Required" : "Not required"}</dd></div>
               <div><dt>Next action</dt><dd>{result.analysis.decision.recommended_action}</dd></div>
             </dl>
@@ -132,6 +168,27 @@ export default function App() {
               <h3>Evidence</h3>
               <ul>{result.analysis.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
             </div>
+          </div>
+
+          <div className="card wide">
+            <h2>Resource-level AI and liquidity scores</h2>
+            <div className="resource-table">
+              <div className="resource-row heading">
+                <span>Resource</span><span>Data</span><span>Runway</span><span>Rule shortage</span><span>ML shortage</span><span>ML anomaly</span><span>Fused confidence</span>
+              </div>
+              {result.analysis.resources.map((resource) => (
+                <div className="resource-row" key={resource.resource_id}>
+                  <span>{resource.resource_id}</span>
+                  <span>{resource.data_quality.state} · {pct(resource.data_quality.score)}</span>
+                  <span>{runwayText(resource)}</span>
+                  <span>{pct(resource.liquidity.shortage_probability_60m)}</span>
+                  <span>{pct(resource.ml_prediction.shortage_probability_60m)}</span>
+                  <span>{pct(resource.ml_prediction.anomaly_probability)}</span>
+                  <span>{pct(resource.fused_confidence)}</span>
+                </div>
+              ))}
+            </div>
+            <p className="small-note">ML version: {result.analysis.resources[0]?.ml_prediction.model_version}. Dataset training will replace this baseline artifact.</p>
           </div>
 
           <div className="card wide">

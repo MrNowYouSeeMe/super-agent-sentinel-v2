@@ -3,6 +3,7 @@
 from app.api.v1.schemas import IntelligenceRequest
 from app.services.cases import build_case_from_analysis
 from app.services.intelligence import IntelligenceResponse, analyze
+from app.services.ml_runtime import model_metadata
 from app.services.scenarios import ScenarioRunResponse, ScenarioSummary, list_scenarios, run_scenario
 
 router = APIRouter(prefix="/api/v1")
@@ -11,6 +12,11 @@ router = APIRouter(prefix="/api/v1")
 @router.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok", "service": "superagent-sentinel-v2"}
+
+
+@router.get("/intelligence/model")
+def intelligence_model() -> dict[str, object]:
+    return model_metadata()
 
 
 @router.post("/intelligence/analyze", response_model=IntelligenceResponse)

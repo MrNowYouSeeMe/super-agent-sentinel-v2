@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+﻿from pydantic import BaseModel, Field
 
 from app.api.v1.schemas import IntelligenceRequest, ResourceSnapshot
 from app.domain.anomaly.models import AnomalyInput, AnomalyResult
@@ -10,7 +10,10 @@ from app.domain.decision.models import DecisionInput, DecisionResult
 from app.domain.decision.service import make_decision
 from app.domain.liquidity.models import LiquidityInput, LiquidityProjection
 from app.domain.liquidity.service import project_liquidity
+from app.domain.ml.features import build_resource_features
+from app.domain.ml.models import ModelPrediction
 from app.services.explanations import deterministic_explanation
+from app.services.ml_runtime import predict_resource
 
 
 class ResourceAnalysis(BaseModel):
@@ -18,6 +21,10 @@ class ResourceAnalysis(BaseModel):
     data_quality: DataQualityResult
     liquidity: LiquidityProjection
     anomaly: AnomalyResult
+    ml_prediction: ModelPrediction
+    fused_shortage_probability_60m: float = Field(ge=0, le=1)
+    fused_anomaly_score: float = Field(ge=0, le=1)
+    fused_confidence: float = Field(ge=0, le=1)
 
 
 class IntelligenceResponse(BaseModel):
@@ -28,6 +35,25 @@ class IntelligenceResponse(BaseModel):
     evidence: list[str]
     possible_normal_context: list[str]
     explanation: str
+
+
+def _fuse_scores(
+    *,
+    rule_shortage: float,
+    model_shortage: float,
+    rule_anomaly: float,
+    model_anomaly: float,
+    data_quality_score: float,
+    data_health: DataHealth,
+) -> tuple[float, float, float]:
+    shortage = 0.70 * rule_shortage + 0.30 * model_shortage
+    anomaly = 0.65 * rule_anomaly + 0.35 * model_anomaly
+    confidence = min(0.95, data_quality_score)
+    if data_health == DataHealth.DEGRADED:
+        confidence = min(confidence, 0.70)
+    if data_health == DataHealth.UNRELIABLE:
+        confidence = min(confidence, 0.40)
+    return round(shortage, 6), round(anomaly, 6), round(confidence, 6)
 
 
 def _analyze_resource(
@@ -66,11 +92,31 @@ def _analyze_resource(
             festival_or_market_day=festival_or_market_day,
         )
     )
+    ml_prediction = predict_resource(
+        build_resource_features(
+            resource,
+            data_quality=quality,
+            liquidity=liquidity,
+            festival_or_market_day=festival_or_market_day,
+        )
+    )
+    fused_shortage, fused_anomaly, fused_confidence = _fuse_scores(
+        rule_shortage=liquidity.shortage_probability_60m,
+        model_shortage=ml_prediction.shortage_probability_60m,
+        rule_anomaly=anomaly.score,
+        model_anomaly=ml_prediction.anomaly_probability,
+        data_quality_score=quality.score,
+        data_health=quality.state,
+    )
     return ResourceAnalysis(
         resource_id=resource.resource_id,
         data_quality=quality,
         liquidity=liquidity,
         anomaly=anomaly,
+        ml_prediction=ml_prediction,
+        fused_shortage_probability_60m=fused_shortage,
+        fused_anomaly_score=fused_anomaly,
+        fused_confidence=fused_confidence,
     )
 
 
@@ -92,18 +138,18 @@ def analyze(request: IntelligenceRequest) -> IntelligenceResponse:
     selected = max(
         resources,
         key=lambda item: max(
-            item.liquidity.shortage_probability_60m,
-            item.anomaly.score,
+            item.fused_shortage_probability_60m,
+            item.fused_anomaly_score,
             1.0 if item.data_quality.state == DataHealth.UNRELIABLE else 0.0,
         ),
     )
     decision = make_decision(
         DecisionInput(
             resource_id=selected.resource_id,
-            shortage_probability=selected.liquidity.shortage_probability_60m,
-            anomaly_score=selected.anomaly.score,
+            shortage_probability=selected.fused_shortage_probability_60m,
+            anomaly_score=selected.fused_anomaly_score,
             data_health=selected.data_quality.state,
-            data_quality_score=selected.data_quality.score,
+            data_quality_score=selected.fused_confidence,
         )
     )
 
@@ -111,6 +157,7 @@ def analyze(request: IntelligenceRequest) -> IntelligenceResponse:
         *selected.data_quality.evidence,
         *selected.liquidity.evidence,
         *selected.anomaly.evidence,
+        *selected.ml_prediction.notable_signals,
     ]
     explanation = deterministic_explanation(
         request.language, decision, selected.liquidity
@@ -124,3 +171,4 @@ def analyze(request: IntelligenceRequest) -> IntelligenceResponse:
         possible_normal_context=selected.anomaly.possible_normal_context,
         explanation=explanation,
     )
+

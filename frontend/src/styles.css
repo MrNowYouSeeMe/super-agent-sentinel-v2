@@ -32,3 +32,38 @@ dd { margin: 0; font-weight: 700; text-align: right; }
 .timeline li { padding: 10px 0; }
 .timeline span { color: #56645c; }
 
+.resource-table {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  font-size: 0.9rem;
+}
+
+.resource-row:first-child {
+  border-top: 0;
+}
+
+.resource-row.heading {
+  background: rgba(15, 23, 42, 0.06);
+  font-weight: 700;
+}
+
+.small-note {
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 900px) {
+  .resource-row {
+    grid-template-columns: 1fr;
+  }
+}
+
