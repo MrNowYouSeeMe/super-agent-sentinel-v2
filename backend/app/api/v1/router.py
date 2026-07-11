@@ -1,4 +1,3 @@
-﻿
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, Field
 
@@ -22,6 +21,13 @@ from app.services.auth import (
 from app.services.cases import apply_case_action, build_case_from_analysis
 from app.services.intelligence import IntelligenceResponse, analyze
 from app.services.ml_runtime import model_metadata
+from app.services.phase6b_runtime import (
+    Phase6BPredictionRequest,
+    Phase6BPredictionResponse,
+    Phase6BStatus,
+    phase6b_status,
+    predict_phase6b,
+)
 from app.services.scenarios import ScenarioRunResponse, ScenarioSummary, list_scenarios, run_scenario
 from app.services.validation_evidence import ValidationEvidenceReport, build_validation_evidence_report
 
@@ -53,7 +59,7 @@ def _validate_or_422(payload: IntelligenceRequest) -> ValidationReport:
     report = validate_intelligence_request(payload)
     if not report.valid:
         raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
             detail=report.model_dump(mode="json"),
         )
     return report
@@ -92,6 +98,32 @@ def validation_evidence() -> ValidationEvidenceReport:
 @router.get("/intelligence/model")
 def intelligence_model() -> dict[str, object]:
     return model_metadata()
+
+
+@router.get("/ml/phase6b/status", response_model=Phase6BStatus)
+def trained_model_status() -> Phase6BStatus:
+    return phase6b_status()
+
+
+@router.post("/ml/phase6b/predict", response_model=Phase6BPredictionResponse)
+def trained_model_predict(
+    payload: Phase6BPredictionRequest,
+    principal: Principal = Depends(current_principal),
+) -> Phase6BPredictionResponse:
+    try:
+        authorize(
+            principal,
+            Permission.ANALYSIS_CREATE,
+            area_id=payload.area_id,
+            outlet_id=payload.outlet_id,
+        )
+        return predict_phase6b(payload)
+    except AuthorizationError as exc:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=str(exc)) from exc
 
 
 @router.post("/intelligence/analyze", response_model=IntelligenceResponse)

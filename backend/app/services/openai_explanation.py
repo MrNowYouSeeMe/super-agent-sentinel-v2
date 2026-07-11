@@ -1,9 +1,8 @@
-﻿
 from __future__ import annotations
 
-import os
-
 from pydantic import BaseModel, Field
+
+from app.core.config import get_settings
 
 
 class ExplanationInput(BaseModel):
@@ -37,36 +36,43 @@ def deterministic_operator_explanation(payload: ExplanationInput) -> Explanation
 
 def _build_prompt(payload: ExplanationInput) -> str:
     return (
-        "Rewrite the following decision-support result for an MFS operations user. "
-        "Do not invent facts. Do not accuse fraud. Do not suggest moving money, freezing, or blocking. "
+        "Rewrite this MFS decision-support result clearly. "
+        "Do not invent facts, accuse fraud, recommend moving money, freeze accounts, or block customers. "
         f"Language: {payload.language}. "
         f"Classification: {payload.classification}. Severity: {payload.severity}. "
         f"Affected resource: {payload.affected_resource}. Confidence: {payload.confidence}. "
-        f"Evidence: {payload.evidence}. Recommended action: {payload.recommended_action}."
+        f"Evidence: {payload.evidence}. Recommended human action: {payload.recommended_action}."
     )
 
 
-def explain_with_optional_openai(payload: ExplanationInput) -> ExplanationOutput:
-    enabled = os.getenv("OPENAI_ENABLED", "false").lower() in {"1", "true", "yes"}
-    api_key = os.getenv("OPENAI_API_KEY", "")
-    if not enabled or not api_key:
+def explain_with_optional_openai(
+    payload: ExplanationInput,
+    *,
+    allow_openai: bool = False,
+) -> ExplanationOutput:
+    settings = get_settings()
+    if not allow_openai or not settings.openai_enabled or not settings.openai_api_key:
         return deterministic_operator_explanation(payload)
 
     try:
-        from openai import OpenAI  # type: ignore
+        from openai import OpenAI
 
-        client = OpenAI(api_key=api_key)
-        model = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+        client = OpenAI(api_key=settings.openai_api_key, timeout=8.0)
         response = client.responses.create(
-            model=model,
+            model=settings.openai_model,
             input=_build_prompt(payload),
-            timeout=8,
         )
         text = getattr(response, "output_text", "") or ""
         if not text.strip():
             return deterministic_operator_explanation(payload)
         lowered = text.lower()
-        forbidden = ["fraud confirmed", "move money", "freeze account", "block customer"]
+        forbidden = [
+            "fraud confirmed",
+            "move money",
+            "transfer money",
+            "freeze account",
+            "block customer",
+        ]
         if any(item in lowered for item in forbidden):
             return deterministic_operator_explanation(payload)
         return ExplanationOutput(mode="openai", text=text.strip())
