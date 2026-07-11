@@ -1,0 +1,28 @@
+{
+  "freeze_id": "phase6b-1.0.0",
+  "frozen_at": "2026-07-11T21:14:00.888036+00:00",
+  "model_bundle": {
+    "path": "E:\\superagent-sentinel-v2\\artifacts\\models\\phase6b\\phase6b_model_bundle.joblib",
+    "sha256": "6b3ad4acf76f4a74bc0a6621b4818f7995ea21214b1eca4fccb89df21ff0a8d7"
+  },
+  "metrics": {
+    "path": "E:\\superagent-sentinel-v2\\reports\\model_training\\phase6b_metrics.json",
+    "sha256": "0be7c944e501d9fd7bc1833e8637b58a6032fb26872b5438b8d84dbf50087ead"
+  },
+  "feature_contract": {
+    "path": "E:\\superagent-sentinel-v2\\reports\\model_training\\phase6b_feature_contract.json",
+    "sha256": "7abf9fb957a80874722c802abbe4c75b5efa1eca510b762b81f0827f52579203"
+  },
+  "blind_public_predictions": {
+    "path": "E:\\superagent-sentinel-v2\\artifacts\\predictions\\phase6b_blind_public_predictions.csv.gz",
+    "sha256": "7f4fc94a824e3b625fa8222bc322cced03b513740bca215548e0651d5f983b2b"
+  },
+  "thresholds": {
+    "anomaly": 0.16999999999999998,
+    "shortage_30m": 0.13999999999999999,
+    "shortage_60m": 0.13999999999999999,
+    "shortage_120m": 0.13999999999999999
+  },
+  "private_ground_truth_used": false,
+  "next_step": "Phase 6C may evaluate this frozen prediction file against private ground truth without retraining or retuning."
+}

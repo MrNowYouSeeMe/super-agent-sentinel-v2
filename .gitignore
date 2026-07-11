@@ -44,3 +44,6 @@ data/manifests/*.json
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/mfs_training_template.csv
+
+# Local trained models and blind-public predictions
+artifacts/predictions/
