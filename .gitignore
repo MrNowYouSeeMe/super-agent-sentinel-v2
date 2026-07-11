@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+coverage/
+
+# Data / models
+*.db
+*.sqlite3
+data/raw/*
+!data/raw/.gitkeep
+artifacts/models/*
+!artifacts/models/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #122118;
+  background: #eef4ef;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
+header { margin-bottom: 32px; }
+.eyebrow { font-size: 12px; letter-spacing: .18em; font-weight: 800; }
+h1 { font-size: clamp(36px, 6vw, 72px); margin: 8px 0 12px; line-height: 1; }
+header > p:last-child { max-width: 720px; font-size: 18px; color: #506056; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.card { background: white; border: 1px solid #d5dfd7; border-radius: 18px; padding: 24px; box-shadow: 0 12px 32px rgba(25, 50, 32, .06); }
+button { border: 0; border-radius: 10px; padding: 12px 18px; background: #153c24; color: white; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+dl { display: grid; gap: 12px; }
+dl div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid #edf1ee; padding-bottom: 8px; }
+dt { color: #607067; }
+dd { margin: 0; font-weight: 700; text-align: right; }
+.explanation { padding: 14px; background: #eef7f0; border-radius: 10px; }
+.evidence { margin-top: 20px; }
+.error { color: #a21d1d; }

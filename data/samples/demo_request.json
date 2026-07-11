@@ -1,0 +1,39 @@
+{
+  "outlet_id": "OUT-SYL-017",
+  "area_id": "sylhet",
+  "language": "banglish",
+  "festival_or_market_day": true,
+  "shared_cash": {
+    "resource_id": "shared_cash",
+    "balance": 100000,
+    "safe_buffer": 20000,
+    "cash_in_5m": 40000,
+    "cash_out_5m": 25000
+  },
+  "providers": [
+    {
+      "resource_id": "bkash",
+      "balance": 7000,
+      "safe_buffer": 2000,
+      "cash_in_5m": 1000,
+      "cash_out_5m": 26000,
+      "transaction_count_5m": 30,
+      "repeated_amount_ratio": 0.8,
+      "unique_customer_ratio": 0.2
+    },
+    {
+      "resource_id": "nagad",
+      "balance": 120000,
+      "safe_buffer": 15000,
+      "cash_in_5m": 25000,
+      "cash_out_5m": 20000
+    },
+    {
+      "resource_id": "rocket",
+      "balance": 90000,
+      "safe_buffer": 15000,
+      "cash_in_5m": 18000,
+      "cash_out_5m": 17000
+    }
+  ]
+}
