@@ -1,0 +1,2918 @@
+{
+  "version": "phase9-evidence-index-1.0.0",
+  "created_at": "2026-07-11T22:38:03.396642+00:00",
+  "source": "training dataset only; no private blind-test labels",
+  "source_rows": 120000,
+  "prototype_count": 153,
+  "contains_customer_identifiers": false,
+  "contains_transaction_identifiers": false,
+  "prototypes": [
+    {
+      "prototype_id": "TRAIN-PROT-0001",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7908,
+        "repeated_amount_ratio": 0.0727,
+        "unique_customer_ratio": 0.7522,
+        "failure_rate": 0.0388,
+        "data_quality_score": 0.999,
+        "feed_age_seconds": 15.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0002",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7908,
+        "repeated_amount_ratio": 0.1025,
+        "unique_customer_ratio": 0.7526,
+        "failure_rate": 0.0441,
+        "data_quality_score": 0.9948,
+        "feed_age_seconds": 78.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0003",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.5817,
+        "repeated_amount_ratio": 0.1577,
+        "unique_customer_ratio": 0.7297,
+        "failure_rate": 0.0124,
+        "data_quality_score": 0.9923,
+        "feed_age_seconds": 115.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0004",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.6011,
+        "repeated_amount_ratio": 0.0354,
+        "unique_customer_ratio": 0.8125,
+        "failure_rate": 0.0063,
+        "data_quality_score": 0.9865,
+        "feed_age_seconds": 202.0,
+        "shared_cash_burn_ratio": 0.001307970944822955,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0005",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.3892,
+        "repeated_amount_ratio": 0.0988,
+        "unique_customer_ratio": 0.7966,
+        "failure_rate": 0.0508,
+        "data_quality_score": 0.9853,
+        "feed_age_seconds": 221.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0006",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.6218,
+        "repeated_amount_ratio": 0.09,
+        "unique_customer_ratio": 0.5717,
+        "failure_rate": 0.0067,
+        "data_quality_score": 0.985,
+        "feed_age_seconds": 225.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0007",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.8017,
+        "repeated_amount_ratio": 0.0084,
+        "unique_customer_ratio": 0.9273,
+        "failure_rate": 0.0055,
+        "data_quality_score": 0.9885,
+        "feed_age_seconds": 173.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0008",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.3936,
+        "repeated_amount_ratio": 0.1167,
+        "unique_customer_ratio": 0.7151,
+        "failure_rate": 0.0058,
+        "data_quality_score": 0.9852,
+        "feed_age_seconds": 222.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0009",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0147,
+        "unique_customer_ratio": 0.8902,
+        "failure_rate": 0.0083,
+        "data_quality_score": 0.9928,
+        "feed_age_seconds": 108.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0010",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.7602,
+        "repeated_amount_ratio": 0.1701,
+        "unique_customer_ratio": 0.8374,
+        "failure_rate": 0.0129,
+        "data_quality_score": 0.9967,
+        "feed_age_seconds": 50.0,
+        "shared_cash_burn_ratio": 0.044940764386590316,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0011",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.9737,
+        "repeated_amount_ratio": 0.0301,
+        "unique_customer_ratio": 0.8957,
+        "failure_rate": 0.0287,
+        "data_quality_score": 0.9869,
+        "feed_age_seconds": 196.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0012",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0637,
+        "unique_customer_ratio": 0.9723,
+        "failure_rate": 0.0014,
+        "data_quality_score": 0.9957,
+        "feed_age_seconds": 65.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0013",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.5651,
+        "repeated_amount_ratio": 0.011,
+        "unique_customer_ratio": 0.7973,
+        "failure_rate": 0.0064,
+        "data_quality_score": 0.9873,
+        "feed_age_seconds": 191.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0014",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.7482,
+        "repeated_amount_ratio": 0.0119,
+        "unique_customer_ratio": 0.7572,
+        "failure_rate": 0.0255,
+        "data_quality_score": 0.9868,
+        "feed_age_seconds": 198.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0015",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.6491,
+        "repeated_amount_ratio": 0.0974,
+        "unique_customer_ratio": 0.6887,
+        "failure_rate": 0.0144,
+        "data_quality_score": 0.9866,
+        "feed_age_seconds": 201.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0016",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0284,
+        "unique_customer_ratio": 0.7837,
+        "failure_rate": 0.0164,
+        "data_quality_score": 0.9973,
+        "feed_age_seconds": 41.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0017",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.4034,
+        "repeated_amount_ratio": 0.0171,
+        "unique_customer_ratio": 0.5504,
+        "failure_rate": 0.0164,
+        "data_quality_score": 0.9874,
+        "feed_age_seconds": 189.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0018",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.8584,
+        "repeated_amount_ratio": 0.0987,
+        "unique_customer_ratio": 0.8738,
+        "failure_rate": 0.0181,
+        "data_quality_score": 0.9852,
+        "feed_age_seconds": 222.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0019",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0075,
+        "unique_customer_ratio": 0.8441,
+        "failure_rate": 0.0126,
+        "data_quality_score": 0.9962,
+        "feed_age_seconds": 57.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0020",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.2442,
+        "unique_customer_ratio": 0.9784,
+        "failure_rate": 0.0261,
+        "data_quality_score": 0.9927,
+        "feed_age_seconds": 109.0,
+        "shared_cash_burn_ratio": 0.23010770945043818,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0021",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0385,
+        "unique_customer_ratio": 0.8464,
+        "failure_rate": 0.0056,
+        "data_quality_score": 0.9886,
+        "feed_age_seconds": 171.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0022",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.3086,
+        "repeated_amount_ratio": 0.0303,
+        "unique_customer_ratio": 0.8609,
+        "failure_rate": 0.0144,
+        "data_quality_score": 0.9957,
+        "feed_age_seconds": 64.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0023",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.8715,
+        "repeated_amount_ratio": 0.1116,
+        "unique_customer_ratio": 0.8568,
+        "failure_rate": 0.0083,
+        "data_quality_score": 0.9987,
+        "feed_age_seconds": 19.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0024",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.4923,
+        "repeated_amount_ratio": 0.0241,
+        "unique_customer_ratio": 0.8523,
+        "failure_rate": 0.0347,
+        "data_quality_score": 0.9958,
+        "feed_age_seconds": 63.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0025",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.5996,
+        "repeated_amount_ratio": 0.2767,
+        "unique_customer_ratio": 0.8387,
+        "failure_rate": 0.0033,
+        "data_quality_score": 0.9891,
+        "feed_age_seconds": 164.0,
+        "shared_cash_burn_ratio": 0.19917320744802675,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0026",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 4.9174,
+        "repeated_amount_ratio": 0.1146,
+        "unique_customer_ratio": 0.8572,
+        "failure_rate": 0.0189,
+        "data_quality_score": 0.9862,
+        "feed_age_seconds": 207.0,
+        "shared_cash_burn_ratio": 0.48378727241508074,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0027",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 4.8998,
+        "repeated_amount_ratio": 0.4188,
+        "unique_customer_ratio": 0.9591,
+        "failure_rate": 0.0293,
+        "data_quality_score": 0.987,
+        "feed_age_seconds": 195.0,
+        "shared_cash_burn_ratio": 0.8964407594321794,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0028",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 4.7688,
+        "repeated_amount_ratio": 0.0121,
+        "unique_customer_ratio": 0.8337,
+        "failure_rate": 0.0191,
+        "data_quality_score": 0.9975,
+        "feed_age_seconds": 37.0,
+        "shared_cash_burn_ratio": 2.4946281333293405,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0029",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.5371,
+        "repeated_amount_ratio": 0.0818,
+        "unique_customer_ratio": 0.7783,
+        "failure_rate": 0.1062,
+        "data_quality_score": 0.9913,
+        "feed_age_seconds": 130.0,
+        "shared_cash_burn_ratio": 45.98704307862135,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0030",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.4317,
+        "repeated_amount_ratio": 0.1845,
+        "unique_customer_ratio": 0.8997,
+        "failure_rate": 0.029,
+        "data_quality_score": 0.9879,
+        "feed_age_seconds": 182.0,
+        "shared_cash_burn_ratio": 1.1040677447037583,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0031",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.5862,
+        "repeated_amount_ratio": 0.2549,
+        "unique_customer_ratio": 0.7483,
+        "failure_rate": 0.0024,
+        "data_quality_score": 0.9895,
+        "feed_age_seconds": 158.0,
+        "shared_cash_burn_ratio": 226856.55,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0032",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.5092,
+        "unique_customer_ratio": 0.6796,
+        "failure_rate": 0.0145,
+        "data_quality_score": 0.9862,
+        "feed_age_seconds": 207.0,
+        "shared_cash_burn_ratio": 1.0766058397636113,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0033",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 4.9522,
+        "repeated_amount_ratio": 0.9079,
+        "unique_customer_ratio": 0.5867,
+        "failure_rate": 0.0164,
+        "data_quality_score": 0.9982,
+        "feed_age_seconds": 27.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0034",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2621,
+        "repeated_amount_ratio": 0.9082,
+        "unique_customer_ratio": 0.6497,
+        "failure_rate": 0.1279,
+        "data_quality_score": 0.9851,
+        "feed_age_seconds": 223.0,
+        "shared_cash_burn_ratio": 0.18180478535884723,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0035",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0093,
+        "unique_customer_ratio": 0.8206,
+        "failure_rate": 0.0027,
+        "data_quality_score": 0.995,
+        "feed_age_seconds": 75.0,
+        "shared_cash_burn_ratio": 0.29491361673518807,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0036",
+      "scenario_family": "anomaly_or_liquidity",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.6562,
+        "repeated_amount_ratio": 0.2005,
+        "unique_customer_ratio": 0.7253,
+        "failure_rate": 0.7021,
+        "data_quality_score": 0.9983,
+        "feed_age_seconds": 25.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0037",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.9928,
+        "repeated_amount_ratio": 0.2654,
+        "unique_customer_ratio": 0.9149,
+        "failure_rate": 0.0106,
+        "data_quality_score": 0.4901,
+        "feed_age_seconds": 7649.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0038",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.9964,
+        "repeated_amount_ratio": 0.1454,
+        "unique_customer_ratio": 0.8553,
+        "failure_rate": 0.0067,
+        "data_quality_score": 0.6271,
+        "feed_age_seconds": 5594.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0039",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7814,
+        "repeated_amount_ratio": 0.0925,
+        "unique_customer_ratio": 0.7892,
+        "failure_rate": 0.0547,
+        "data_quality_score": 0.9849,
+        "feed_age_seconds": 226.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0040",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.0319,
+        "repeated_amount_ratio": 0.1457,
+        "unique_customer_ratio": 0.8126,
+        "failure_rate": 0.0436,
+        "data_quality_score": 0.8795,
+        "feed_age_seconds": 197.0,
+        "shared_cash_burn_ratio": 0.010484128870046409,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0041",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.3685,
+        "repeated_amount_ratio": 0.0288,
+        "unique_customer_ratio": 0.8169,
+        "failure_rate": 0.0086,
+        "data_quality_score": 0.9972,
+        "feed_age_seconds": 42.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0042",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.8095,
+        "repeated_amount_ratio": 0.0046,
+        "unique_customer_ratio": 0.9003,
+        "failure_rate": 0.0035,
+        "data_quality_score": 0.9984,
+        "feed_age_seconds": 24.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0043",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.5104,
+        "repeated_amount_ratio": 0.2135,
+        "unique_customer_ratio": 0.8982,
+        "failure_rate": 0.0108,
+        "data_quality_score": 0.868,
+        "feed_age_seconds": 87.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0044",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.1056,
+        "repeated_amount_ratio": 0.2287,
+        "unique_customer_ratio": 0.6878,
+        "failure_rate": 0.048,
+        "data_quality_score": 0.9961,
+        "feed_age_seconds": 59.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0045",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.51,
+        "repeated_amount_ratio": 0.2392,
+        "unique_customer_ratio": 0.8535,
+        "failure_rate": 0.0045,
+        "data_quality_score": 0.9909,
+        "feed_age_seconds": 137.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0046",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.426,
+        "repeated_amount_ratio": 0.0951,
+        "unique_customer_ratio": 0.6861,
+        "failure_rate": 0.0051,
+        "data_quality_score": 0.9851,
+        "feed_age_seconds": 223.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0047",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.6951,
+        "repeated_amount_ratio": 0.314,
+        "unique_customer_ratio": 0.9772,
+        "failure_rate": 0.0104,
+        "data_quality_score": 0.8732,
+        "feed_age_seconds": 124.0,
+        "shared_cash_burn_ratio": 0.005561790189784965,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0048",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 5.3492,
+        "repeated_amount_ratio": 0.112,
+        "unique_customer_ratio": 0.593,
+        "failure_rate": 0.0127,
+        "data_quality_score": 0.8219,
+        "feed_age_seconds": 151.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0049",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.1874,
+        "repeated_amount_ratio": 0.0101,
+        "unique_customer_ratio": 0.8202,
+        "failure_rate": 0.6067,
+        "data_quality_score": 0.9842,
+        "feed_age_seconds": 237.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0050",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.2704,
+        "repeated_amount_ratio": 0.1564,
+        "unique_customer_ratio": 0.7433,
+        "failure_rate": 0.0028,
+        "data_quality_score": 0.5516,
+        "feed_age_seconds": 82.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0051",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.2088,
+        "repeated_amount_ratio": 0.0148,
+        "unique_customer_ratio": 0.9252,
+        "failure_rate": 0.0163,
+        "data_quality_score": 0.9895,
+        "feed_age_seconds": 158.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0052",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.729,
+        "repeated_amount_ratio": 0.0374,
+        "unique_customer_ratio": 0.7488,
+        "failure_rate": 0.0072,
+        "data_quality_score": 0.4217,
+        "feed_age_seconds": 8674.0,
+        "shared_cash_burn_ratio": 4.890015964869023e-05,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0053",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.1004,
+        "repeated_amount_ratio": 0.2762,
+        "unique_customer_ratio": 0.8477,
+        "failure_rate": 0.0205,
+        "data_quality_score": 0.9939,
+        "feed_age_seconds": 91.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0054",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.4332,
+        "repeated_amount_ratio": 0.0894,
+        "unique_customer_ratio": 0.8722,
+        "failure_rate": 0.0393,
+        "data_quality_score": 0.5323,
+        "feed_age_seconds": 7016.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0055",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.8925,
+        "repeated_amount_ratio": 0.0891,
+        "unique_customer_ratio": 0.7556,
+        "failure_rate": 0.0476,
+        "data_quality_score": 0.8474,
+        "feed_age_seconds": 24.0,
+        "shared_cash_burn_ratio": 0.050916573431739415,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0056",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.1594,
+        "repeated_amount_ratio": 0.0436,
+        "unique_customer_ratio": 0.5677,
+        "failure_rate": 0.0075,
+        "data_quality_score": 0.7955,
+        "feed_age_seconds": 185.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0057",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.4412,
+        "repeated_amount_ratio": 0.0719,
+        "unique_customer_ratio": 0.929,
+        "failure_rate": 0.007,
+        "data_quality_score": 0.9966,
+        "feed_age_seconds": 51.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0058",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.7039,
+        "repeated_amount_ratio": 0.1088,
+        "unique_customer_ratio": 0.8538,
+        "failure_rate": 0.0218,
+        "data_quality_score": 0.9891,
+        "feed_age_seconds": 163.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0059",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.4332,
+        "repeated_amount_ratio": 0.1181,
+        "unique_customer_ratio": 0.6571,
+        "failure_rate": 0.0111,
+        "data_quality_score": 0.604,
+        "feed_age_seconds": 5940.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0060",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.9098,
+        "repeated_amount_ratio": 0.0416,
+        "unique_customer_ratio": 0.8733,
+        "failure_rate": 0.0343,
+        "data_quality_score": 0.9859,
+        "feed_age_seconds": 211.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0061",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2195,
+        "repeated_amount_ratio": 0.1112,
+        "unique_customer_ratio": 0.7253,
+        "failure_rate": 0.0295,
+        "data_quality_score": 0.3875,
+        "feed_age_seconds": 9187.0,
+        "shared_cash_burn_ratio": 0.14250793128807554,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0062",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.2761,
+        "repeated_amount_ratio": 0.3238,
+        "unique_customer_ratio": 0.7744,
+        "failure_rate": 0.6139,
+        "data_quality_score": 0.861,
+        "feed_age_seconds": 2085.0,
+        "shared_cash_burn_ratio": 0.21784124861020665,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0063",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7949,
+        "repeated_amount_ratio": 0.0232,
+        "unique_customer_ratio": 0.6108,
+        "failure_rate": 0.0059,
+        "data_quality_score": 0.8988,
+        "feed_age_seconds": 208.0,
+        "shared_cash_burn_ratio": 0.5113254175790285,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0064",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.2134,
+        "unique_customer_ratio": 0.9043,
+        "failure_rate": 0.4864,
+        "data_quality_score": 0.9954,
+        "feed_age_seconds": 69.0,
+        "shared_cash_burn_ratio": 0.025490013353314304,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0065",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 3.3669,
+        "repeated_amount_ratio": 0.1214,
+        "unique_customer_ratio": 0.7816,
+        "failure_rate": 0.0211,
+        "data_quality_score": 0.9947,
+        "feed_age_seconds": 79.0,
+        "shared_cash_burn_ratio": 0.4880681802026155,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0066",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 5.1592,
+        "repeated_amount_ratio": 0.1304,
+        "unique_customer_ratio": 0.8593,
+        "failure_rate": 0.016,
+        "data_quality_score": 0.7648,
+        "feed_age_seconds": 201.0,
+        "shared_cash_burn_ratio": 11.173125860280035,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0067",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.7948,
+        "repeated_amount_ratio": 0.1433,
+        "unique_customer_ratio": 0.9428,
+        "failure_rate": 0.0087,
+        "data_quality_score": 0.8827,
+        "feed_age_seconds": 71.0,
+        "shared_cash_burn_ratio": 129184.8,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0068",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.5499,
+        "repeated_amount_ratio": 0.2269,
+        "unique_customer_ratio": 0.8561,
+        "failure_rate": 0.0229,
+        "data_quality_score": 0.8345,
+        "feed_age_seconds": 12.0,
+        "shared_cash_burn_ratio": 0.35159112297186973,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0069",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.9205,
+        "repeated_amount_ratio": 0.034,
+        "unique_customer_ratio": 0.8762,
+        "failure_rate": 0.0829,
+        "data_quality_score": 0.8237,
+        "feed_age_seconds": 97.0,
+        "shared_cash_burn_ratio": 0.07768202300024035,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0070",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.5537,
+        "repeated_amount_ratio": 0.2094,
+        "unique_customer_ratio": 0.9557,
+        "failure_rate": 0.6762,
+        "data_quality_score": 0.8879,
+        "feed_age_seconds": 214.0,
+        "shared_cash_burn_ratio": 0.07806801266605869,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0071",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.1063,
+        "unique_customer_ratio": 0.5774,
+        "failure_rate": 0.5043,
+        "data_quality_score": 0.7804,
+        "feed_age_seconds": 3294.0,
+        "shared_cash_burn_ratio": 0.0073534598647011186,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0072",
+      "scenario_family": "combined_adversarial",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 4.8152,
+        "repeated_amount_ratio": 0.0331,
+        "unique_customer_ratio": 0.9054,
+        "failure_rate": 0.0231,
+        "data_quality_score": 0.6061,
+        "feed_age_seconds": 5909.0,
+        "shared_cash_burn_ratio": 0.27952046757930804,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0073",
+      "scenario_family": "data_quality",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.5145,
+        "repeated_amount_ratio": 0.3123,
+        "unique_customer_ratio": 0.484,
+        "failure_rate": 0.0008,
+        "data_quality_score": 0.815,
+        "feed_age_seconds": 27.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0074",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.4079,
+        "repeated_amount_ratio": 0.0903,
+        "unique_customer_ratio": 0.6417,
+        "failure_rate": 0.3882,
+        "data_quality_score": 0.9954,
+        "feed_age_seconds": 69.0,
+        "shared_cash_burn_ratio": 0.34785155524230976,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0075",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.0559,
+        "repeated_amount_ratio": 0.1467,
+        "unique_customer_ratio": 0.8123,
+        "failure_rate": 0.714,
+        "data_quality_score": 0.9841,
+        "feed_age_seconds": 238.0,
+        "shared_cash_burn_ratio": 0.3820800044477568,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0076",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7682,
+        "repeated_amount_ratio": 0.0589,
+        "unique_customer_ratio": 0.8528,
+        "failure_rate": 0.6026,
+        "data_quality_score": 0.9929,
+        "feed_age_seconds": 107.0,
+        "shared_cash_burn_ratio": 0.36171267640636884,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0077",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.7039,
+        "repeated_amount_ratio": 0.0038,
+        "unique_customer_ratio": 0.7561,
+        "failure_rate": 0.4754,
+        "data_quality_score": 0.9855,
+        "feed_age_seconds": 218.0,
+        "shared_cash_burn_ratio": 0.4301263579542423,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0078",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.9657,
+        "repeated_amount_ratio": 0.1127,
+        "unique_customer_ratio": 0.7904,
+        "failure_rate": 0.0242,
+        "data_quality_score": 0.6105,
+        "feed_age_seconds": 121.0,
+        "shared_cash_burn_ratio": 2.7693600708749213,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0079",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.9657,
+        "repeated_amount_ratio": 0.262,
+        "unique_customer_ratio": 0.9679,
+        "failure_rate": 0.0039,
+        "data_quality_score": 0.8699,
+        "feed_age_seconds": 96.0,
+        "shared_cash_burn_ratio": 1.5949192780214556,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0080",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 3.2191,
+        "repeated_amount_ratio": 0.113,
+        "unique_customer_ratio": 0.7089,
+        "failure_rate": 0.0709,
+        "data_quality_score": 0.7774,
+        "feed_age_seconds": 22.0,
+        "shared_cash_burn_ratio": 0.7266449484861113,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0081",
+      "scenario_family": "data_quality",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": true,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.6438,
+        "repeated_amount_ratio": 0.0535,
+        "unique_customer_ratio": 0.7811,
+        "failure_rate": 0.001,
+        "data_quality_score": 0.8635,
+        "feed_age_seconds": 217.0,
+        "shared_cash_burn_ratio": 0.21282281444097909,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0082",
+      "scenario_family": "data_quality",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0584,
+        "unique_customer_ratio": 0.8818,
+        "failure_rate": 0.0203,
+        "data_quality_score": 0.9895,
+        "feed_age_seconds": 157.0,
+        "shared_cash_burn_ratio": 0.012226273926827099,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0083",
+      "scenario_family": "data_quality",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.121,
+        "repeated_amount_ratio": 0.1529,
+        "unique_customer_ratio": 0.9521,
+        "failure_rate": 0.0209,
+        "data_quality_score": 0.4465,
+        "feed_age_seconds": 157.0,
+        "shared_cash_burn_ratio": 0.04241647861720334,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0084",
+      "scenario_family": "data_quality",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0119,
+        "unique_customer_ratio": 0.697,
+        "failure_rate": 0.4102,
+        "data_quality_score": 0.9984,
+        "feed_age_seconds": 24.0,
+        "shared_cash_burn_ratio": 0.042442755946429926,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0085",
+      "scenario_family": "data_quality",
+      "affected_service": "nan",
+      "is_unusual": true,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.4052,
+        "repeated_amount_ratio": 0.1081,
+        "unique_customer_ratio": 0.9286,
+        "failure_rate": 0.0349,
+        "data_quality_score": 0.9881,
+        "feed_age_seconds": 179.0,
+        "shared_cash_burn_ratio": 0.17928262080979745,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0086",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.5558,
+        "repeated_amount_ratio": 0.201,
+        "unique_customer_ratio": 0.8218,
+        "failure_rate": 0.0395,
+        "data_quality_score": 0.9955,
+        "feed_age_seconds": 68.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0087",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.9396,
+        "repeated_amount_ratio": 0.0145,
+        "unique_customer_ratio": 0.9499,
+        "failure_rate": 0.0097,
+        "data_quality_score": 0.9912,
+        "feed_age_seconds": 132.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0088",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.9093,
+        "repeated_amount_ratio": 0.1221,
+        "unique_customer_ratio": 0.8719,
+        "failure_rate": 0.0091,
+        "data_quality_score": 0.9955,
+        "feed_age_seconds": 68.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0089",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.9396,
+        "repeated_amount_ratio": 0.1669,
+        "unique_customer_ratio": 0.7996,
+        "failure_rate": 0.0121,
+        "data_quality_score": 0.9964,
+        "feed_age_seconds": 54.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0090",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.9329,
+        "repeated_amount_ratio": 0.0948,
+        "unique_customer_ratio": 0.7257,
+        "failure_rate": 0.0498,
+        "data_quality_score": 0.9889,
+        "feed_age_seconds": 167.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0091",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.2628,
+        "repeated_amount_ratio": 0.2808,
+        "unique_customer_ratio": 0.8572,
+        "failure_rate": 0.06,
+        "data_quality_score": 0.9941,
+        "feed_age_seconds": 88.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0092",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 3.0373,
+        "repeated_amount_ratio": 0.0567,
+        "unique_customer_ratio": 0.6701,
+        "failure_rate": 0.0068,
+        "data_quality_score": 0.9907,
+        "feed_age_seconds": 139.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0093",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.5796,
+        "repeated_amount_ratio": 0.3285,
+        "unique_customer_ratio": 0.9097,
+        "failure_rate": 0.0563,
+        "data_quality_score": 0.9877,
+        "feed_age_seconds": 184.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0094",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.6748,
+        "repeated_amount_ratio": 0.244,
+        "unique_customer_ratio": 0.8965,
+        "failure_rate": 0.0133,
+        "data_quality_score": 0.9997,
+        "feed_age_seconds": 5.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0095",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.6748,
+        "repeated_amount_ratio": 0.1102,
+        "unique_customer_ratio": 0.7593,
+        "failure_rate": 0.0242,
+        "data_quality_score": 0.9966,
+        "feed_age_seconds": 51.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0096",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.2791,
+        "repeated_amount_ratio": 0.3654,
+        "unique_customer_ratio": 0.7655,
+        "failure_rate": 0.039,
+        "data_quality_score": 0.9845,
+        "feed_age_seconds": 232.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0097",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.6748,
+        "repeated_amount_ratio": 0.0441,
+        "unique_customer_ratio": 0.8552,
+        "failure_rate": 0.0164,
+        "data_quality_score": 0.996,
+        "feed_age_seconds": 60.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0098",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.6874,
+        "repeated_amount_ratio": 0.284,
+        "unique_customer_ratio": 0.8138,
+        "failure_rate": 0.0025,
+        "data_quality_score": 0.9853,
+        "feed_age_seconds": 220.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0099",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.3623,
+        "repeated_amount_ratio": 0.1266,
+        "unique_customer_ratio": 0.8043,
+        "failure_rate": 0.0398,
+        "data_quality_score": 0.9887,
+        "feed_age_seconds": 170.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0100",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.0124,
+        "repeated_amount_ratio": 0.0233,
+        "unique_customer_ratio": 0.8426,
+        "failure_rate": 0.0062,
+        "data_quality_score": 0.9973,
+        "feed_age_seconds": 41.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0101",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.6874,
+        "repeated_amount_ratio": 0.1017,
+        "unique_customer_ratio": 0.8668,
+        "failure_rate": 0.0019,
+        "data_quality_score": 0.9981,
+        "feed_age_seconds": 29.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0102",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.6749,
+        "repeated_amount_ratio": 0.0493,
+        "unique_customer_ratio": 0.8856,
+        "failure_rate": 0.0023,
+        "data_quality_score": 0.9937,
+        "feed_age_seconds": 94.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0103",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.0248,
+        "repeated_amount_ratio": 0.0483,
+        "unique_customer_ratio": 0.6121,
+        "failure_rate": 0.0508,
+        "data_quality_score": 0.9875,
+        "feed_age_seconds": 187.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0104",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.0248,
+        "repeated_amount_ratio": 0.1709,
+        "unique_customer_ratio": 0.8996,
+        "failure_rate": 0.0036,
+        "data_quality_score": 0.9952,
+        "feed_age_seconds": 72.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0105",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.3623,
+        "repeated_amount_ratio": 0.0139,
+        "unique_customer_ratio": 0.7289,
+        "failure_rate": 0.0198,
+        "data_quality_score": 0.9885,
+        "feed_age_seconds": 173.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0106",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.5646,
+        "repeated_amount_ratio": 0.16,
+        "unique_customer_ratio": 0.8224,
+        "failure_rate": 0.0016,
+        "data_quality_score": 0.9945,
+        "feed_age_seconds": 82.0,
+        "shared_cash_burn_ratio": 0.2101295951308633,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0107",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.2395,
+        "repeated_amount_ratio": 0.0807,
+        "unique_customer_ratio": 0.9201,
+        "failure_rate": 0.0481,
+        "data_quality_score": 0.9985,
+        "feed_age_seconds": 23.0,
+        "shared_cash_burn_ratio": 0.24410491550024238,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0108",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.1255,
+        "repeated_amount_ratio": 0.1341,
+        "unique_customer_ratio": 0.893,
+        "failure_rate": 0.0186,
+        "data_quality_score": 0.9865,
+        "feed_age_seconds": 203.0,
+        "shared_cash_burn_ratio": 0.5345635360861059,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0109",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.9261,
+        "repeated_amount_ratio": 0.2478,
+        "unique_customer_ratio": 0.9408,
+        "failure_rate": 0.0415,
+        "data_quality_score": 0.9959,
+        "feed_age_seconds": 62.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0110",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 4.266,
+        "repeated_amount_ratio": 0.2854,
+        "unique_customer_ratio": 0.7811,
+        "failure_rate": 0.0217,
+        "data_quality_score": 0.9971,
+        "feed_age_seconds": 44.0,
+        "shared_cash_burn_ratio": 1.4279371252633286,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0111",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.3331,
+        "repeated_amount_ratio": 0.2168,
+        "unique_customer_ratio": 0.9319,
+        "failure_rate": 0.0167,
+        "data_quality_score": 0.9947,
+        "feed_age_seconds": 80.0,
+        "shared_cash_burn_ratio": 5.816518909321155,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0112",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.7259,
+        "repeated_amount_ratio": 0.0226,
+        "unique_customer_ratio": 0.8262,
+        "failure_rate": 0.0127,
+        "data_quality_score": 0.9929,
+        "feed_age_seconds": 107.0,
+        "shared_cash_burn_ratio": 1.3994369134650535,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0113",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.4232,
+        "repeated_amount_ratio": 0.1425,
+        "unique_customer_ratio": 0.6296,
+        "failure_rate": 0.0755,
+        "data_quality_score": 0.992,
+        "feed_age_seconds": 120.0,
+        "shared_cash_burn_ratio": 2.155607829347625,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0114",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.7699,
+        "repeated_amount_ratio": 0.3298,
+        "unique_customer_ratio": 0.7806,
+        "failure_rate": 0.0065,
+        "data_quality_score": 0.9937,
+        "feed_age_seconds": 94.0,
+        "shared_cash_burn_ratio": 0.844698214273331,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0115",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.3015,
+        "repeated_amount_ratio": 0.1259,
+        "unique_customer_ratio": 0.6956,
+        "failure_rate": 0.0153,
+        "data_quality_score": 0.9913,
+        "feed_age_seconds": 130.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0116",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.5157,
+        "repeated_amount_ratio": 0.1548,
+        "unique_customer_ratio": 0.8977,
+        "failure_rate": 0.018,
+        "data_quality_score": 0.9917,
+        "feed_age_seconds": 125.0,
+        "shared_cash_burn_ratio": 0.17110195508223164,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0117",
+      "scenario_family": "hard_negative_normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.129,
+        "repeated_amount_ratio": 0.2405,
+        "unique_customer_ratio": 0.8182,
+        "failure_rate": 0.0135,
+        "data_quality_score": 0.9905,
+        "feed_age_seconds": 143.0,
+        "shared_cash_burn_ratio": 0.07442715154332638,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0118",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.3759,
+        "repeated_amount_ratio": 0.3349,
+        "unique_customer_ratio": 0.7672,
+        "failure_rate": 0.0392,
+        "data_quality_score": 0.9964,
+        "feed_age_seconds": 54.0,
+        "shared_cash_burn_ratio": 0.007362662819893699,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0119",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.3949,
+        "repeated_amount_ratio": 0.213,
+        "unique_customer_ratio": 0.8224,
+        "failure_rate": 0.0123,
+        "data_quality_score": 0.9938,
+        "feed_age_seconds": 93.0,
+        "shared_cash_burn_ratio": 0.00593539042017394,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0120",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.0791,
+        "repeated_amount_ratio": 0.0508,
+        "unique_customer_ratio": 0.9235,
+        "failure_rate": 0.0052,
+        "data_quality_score": 0.9991,
+        "feed_age_seconds": 14.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0121",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.1914,
+        "repeated_amount_ratio": 0.1577,
+        "unique_customer_ratio": 0.7654,
+        "failure_rate": 0.0032,
+        "data_quality_score": 0.9915,
+        "feed_age_seconds": 128.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0122",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.0582,
+        "repeated_amount_ratio": 0.2575,
+        "unique_customer_ratio": 0.9752,
+        "failure_rate": 0.0405,
+        "data_quality_score": 0.9862,
+        "feed_age_seconds": 207.0,
+        "shared_cash_burn_ratio": 0.01449168265765457,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0123",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 2.0849,
+        "repeated_amount_ratio": 0.3512,
+        "unique_customer_ratio": 0.3866,
+        "failure_rate": 0.0039,
+        "data_quality_score": 0.997,
+        "feed_age_seconds": 45.0,
+        "shared_cash_burn_ratio": 0.053216740224895115,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0124",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.9542,
+        "repeated_amount_ratio": 0.0065,
+        "unique_customer_ratio": 0.7566,
+        "failure_rate": 0.0009,
+        "data_quality_score": 0.9988,
+        "feed_age_seconds": 18.0,
+        "shared_cash_burn_ratio": 0.14378952372417642,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0125",
+      "scenario_family": "normal",
+      "affected_service": "bkash:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.3747,
+        "repeated_amount_ratio": 0.3013,
+        "unique_customer_ratio": 0.6896,
+        "failure_rate": 0.0464,
+        "data_quality_score": 0.9964,
+        "feed_age_seconds": 54.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0126",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.0066,
+        "unique_customer_ratio": 0.7983,
+        "failure_rate": 0.0162,
+        "data_quality_score": 0.9929,
+        "feed_age_seconds": 107.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0127",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.1869,
+        "repeated_amount_ratio": 0.063,
+        "unique_customer_ratio": 0.7482,
+        "failure_rate": 0.0863,
+        "data_quality_score": 0.9931,
+        "feed_age_seconds": 104.0,
+        "shared_cash_burn_ratio": 0.026349101219642068,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0128",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2537,
+        "repeated_amount_ratio": 0.1085,
+        "unique_customer_ratio": 0.8505,
+        "failure_rate": 0.0276,
+        "data_quality_score": 0.9948,
+        "feed_age_seconds": 78.0,
+        "shared_cash_burn_ratio": 0.01919951793556621,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0129",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.0163,
+        "repeated_amount_ratio": 0.0934,
+        "unique_customer_ratio": 0.7392,
+        "failure_rate": 0.0001,
+        "data_quality_score": 0.9975,
+        "feed_age_seconds": 37.0,
+        "shared_cash_burn_ratio": 0.061037826347807245,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0130",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.2426,
+        "repeated_amount_ratio": 0.0462,
+        "unique_customer_ratio": 0.9216,
+        "failure_rate": 0.0023,
+        "data_quality_score": 0.9917,
+        "feed_age_seconds": 125.0,
+        "shared_cash_burn_ratio": 0.006482589456853903,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0131",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.334,
+        "repeated_amount_ratio": 0.328,
+        "unique_customer_ratio": 0.8466,
+        "failure_rate": 0.0249,
+        "data_quality_score": 0.9864,
+        "feed_age_seconds": 204.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0132",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.1251,
+        "repeated_amount_ratio": 0.0767,
+        "unique_customer_ratio": 0.9338,
+        "failure_rate": 0.0181,
+        "data_quality_score": 0.9892,
+        "feed_age_seconds": 162.0,
+        "shared_cash_burn_ratio": 0.018510028422153685,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0133",
+      "scenario_family": "normal",
+      "affected_service": "nagad:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.4188,
+        "repeated_amount_ratio": 0.0718,
+        "unique_customer_ratio": 0.9128,
+        "failure_rate": 0.0065,
+        "data_quality_score": 0.9861,
+        "feed_age_seconds": 209.0,
+        "shared_cash_burn_ratio": 0.018097223758328344,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0134",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.0,
+        "repeated_amount_ratio": 0.2411,
+        "unique_customer_ratio": 0.9106,
+        "failure_rate": 0.0112,
+        "data_quality_score": 0.9973,
+        "feed_age_seconds": 41.0,
+        "shared_cash_burn_ratio": 0.13489516950951677,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0135",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.1004,
+        "repeated_amount_ratio": 0.121,
+        "unique_customer_ratio": 0.6775,
+        "failure_rate": 0.0394,
+        "data_quality_score": 0.9939,
+        "feed_age_seconds": 92.0,
+        "shared_cash_burn_ratio": 0.07438938382491307,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0136",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.9319,
+        "repeated_amount_ratio": 0.3767,
+        "unique_customer_ratio": 0.9146,
+        "failure_rate": 0.0027,
+        "data_quality_score": 0.9861,
+        "feed_age_seconds": 208.0,
+        "shared_cash_burn_ratio": 0.06287565537699094,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0137",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.5722,
+        "repeated_amount_ratio": 0.1863,
+        "unique_customer_ratio": 0.9493,
+        "failure_rate": 0.0077,
+        "data_quality_score": 0.9879,
+        "feed_age_seconds": 182.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0138",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.9864,
+        "repeated_amount_ratio": 0.2224,
+        "unique_customer_ratio": 0.7901,
+        "failure_rate": 0.0017,
+        "data_quality_score": 0.9927,
+        "feed_age_seconds": 109.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0139",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.021,
+        "repeated_amount_ratio": 0.0551,
+        "unique_customer_ratio": 0.7971,
+        "failure_rate": 0.0107,
+        "data_quality_score": 0.9842,
+        "feed_age_seconds": 237.0,
+        "shared_cash_burn_ratio": 0.10018925189440701,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0140",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.609,
+        "repeated_amount_ratio": 0.0118,
+        "unique_customer_ratio": 0.8711,
+        "failure_rate": 0.0059,
+        "data_quality_score": 0.992,
+        "feed_age_seconds": 120.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0141",
+      "scenario_family": "normal",
+      "affected_service": "rocket:cash_in_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.6851,
+        "repeated_amount_ratio": 0.359,
+        "unique_customer_ratio": 0.6653,
+        "failure_rate": 0.055,
+        "data_quality_score": 0.9903,
+        "feed_age_seconds": 145.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0142",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.4651,
+        "repeated_amount_ratio": 0.0779,
+        "unique_customer_ratio": 0.8827,
+        "failure_rate": 0.0075,
+        "data_quality_score": 0.9987,
+        "feed_age_seconds": 19.0,
+        "shared_cash_burn_ratio": 0.018610621503365152,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0143",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.3261,
+        "repeated_amount_ratio": 0.0202,
+        "unique_customer_ratio": 0.4927,
+        "failure_rate": 0.0079,
+        "data_quality_score": 0.9918,
+        "feed_age_seconds": 123.0,
+        "shared_cash_burn_ratio": 0.033156732034742724,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0144",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2503,
+        "repeated_amount_ratio": 0.0478,
+        "unique_customer_ratio": 0.375,
+        "failure_rate": 0.0066,
+        "data_quality_score": 0.9901,
+        "feed_age_seconds": 149.0,
+        "shared_cash_burn_ratio": 0.010502776102851703,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0145",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 0.8539,
+        "repeated_amount_ratio": 0.1348,
+        "unique_customer_ratio": 0.8182,
+        "failure_rate": 0.0028,
+        "data_quality_score": 0.9941,
+        "feed_age_seconds": 88.0,
+        "shared_cash_burn_ratio": 0.014864690362674455,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0146",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.4453,
+        "repeated_amount_ratio": 0.5071,
+        "unique_customer_ratio": 0.7325,
+        "failure_rate": 0.0002,
+        "data_quality_score": 0.9871,
+        "feed_age_seconds": 193.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0147",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 0.2919,
+        "repeated_amount_ratio": 0.0633,
+        "unique_customer_ratio": 0.8399,
+        "failure_rate": 0.0114,
+        "data_quality_score": 0.9947,
+        "feed_age_seconds": 79.0,
+        "shared_cash_burn_ratio": 0.011297046488490697,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0148",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 3.5435,
+        "repeated_amount_ratio": 0.1366,
+        "unique_customer_ratio": 0.8944,
+        "failure_rate": 0.0193,
+        "data_quality_score": 0.9993,
+        "feed_age_seconds": 10.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0149",
+      "scenario_family": "normal",
+      "affected_service": "shared_cash:cash_out_service",
+      "is_unusual": false,
+      "shortage_within_60m": true,
+      "features": {
+        "velocity_vs_baseline": 1.1385,
+        "repeated_amount_ratio": 0.0358,
+        "unique_customer_ratio": 0.8121,
+        "failure_rate": 0.0337,
+        "data_quality_score": 0.9911,
+        "feed_age_seconds": 134.0,
+        "shared_cash_burn_ratio": 0.02740645080611573,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0150",
+      "scenario_family": "normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2566,
+        "repeated_amount_ratio": 0.2285,
+        "unique_customer_ratio": 0.494,
+        "failure_rate": 0.0056,
+        "data_quality_score": 0.9981,
+        "feed_age_seconds": 28.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0151",
+      "scenario_family": "normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 2.6818,
+        "repeated_amount_ratio": 0.1166,
+        "unique_customer_ratio": 0.8196,
+        "failure_rate": 0.0378,
+        "data_quality_score": 0.994,
+        "feed_age_seconds": 90.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0152",
+      "scenario_family": "normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 3.1137,
+        "repeated_amount_ratio": 0.0501,
+        "unique_customer_ratio": 0.5924,
+        "failure_rate": 0.0544,
+        "data_quality_score": 0.9995,
+        "feed_age_seconds": 7.0,
+        "shared_cash_burn_ratio": 0.0,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    },
+    {
+      "prototype_id": "TRAIN-PROT-0153",
+      "scenario_family": "normal",
+      "affected_service": "nan",
+      "is_unusual": false,
+      "shortage_within_60m": false,
+      "features": {
+        "velocity_vs_baseline": 1.2242,
+        "repeated_amount_ratio": 0.0023,
+        "unique_customer_ratio": 0.6394,
+        "failure_rate": 0.0324,
+        "data_quality_score": 0.9887,
+        "feed_age_seconds": 169.0,
+        "shared_cash_burn_ratio": 0.008268263471589606,
+        "bkash_burn_ratio": 0.0,
+        "nagad_burn_ratio": 0.0,
+        "rocket_burn_ratio": 0.0
+      }
+    }
+  ]
+}

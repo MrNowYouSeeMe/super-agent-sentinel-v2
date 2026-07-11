@@ -31,6 +31,18 @@ from app.services.phase6b_runtime import (
 from app.services.scenarios import ScenarioRunResponse, ScenarioSummary, list_scenarios, run_scenario
 from app.services.scope_redaction import redact_analysis_for_scope
 from app.services.validation_evidence import ValidationEvidenceReport, build_validation_evidence_report
+from app.services.phase9_feedback import (
+    Phase9FeedbackRequest,
+    Phase9FeedbackResponse,
+    store_feedback,
+)
+from app.services.phase9_governance import (
+    Phase9AnalysisResponse,
+    Phase9InputError,
+    Phase9Status,
+    analyze_phase9,
+    phase9_status,
+)
 
 router = APIRouter(prefix="/api/v1")
 
@@ -224,3 +236,60 @@ def demo_scenario(scenario_id: str) -> ScenarioRunResponse:
         return run_scenario(scenario_id)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+@router.get("/ml/phase9/status", response_model=Phase9Status)
+def phase9_governance_status() -> Phase9Status:
+    return phase9_status()
+
+
+@router.post("/ml/phase9/analyze", response_model=Phase9AnalysisResponse)
+def phase9_governed_analysis(
+    payload: Phase6BPredictionRequest,
+    principal: Principal = Depends(current_principal),
+) -> Phase9AnalysisResponse:
+    try:
+        authorize(
+            principal,
+            Permission.ANALYSIS_CREATE,
+            area_id=payload.area_id,
+            outlet_id=payload.outlet_id,
+        )
+        return analyze_phase9(payload, actor_id=principal.user_id)
+    except AuthorizationError as exc:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
+    except Phase9InputError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail=exc.report.model_dump(mode="json"),
+        ) from exc
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=str(exc)) from exc
+
+
+@router.post("/ml/phase9/feedback", response_model=Phase9FeedbackResponse)
+def phase9_human_feedback(
+    payload: Phase9FeedbackRequest,
+    principal: Principal = Depends(current_principal),
+) -> Phase9FeedbackResponse:
+    provider_id = (
+        None
+        if payload.affected_resource in {"none", "shared_cash"}
+        else payload.affected_resource
+    )
+    try:
+        authorize(
+            principal,
+            Permission.CASE_REVIEW,
+            provider_id=provider_id,
+            area_id=payload.area_id,
+            outlet_id=payload.outlet_id,
+        )
+        return store_feedback(
+            payload,
+            actor_id=principal.user_id,
+            actor_role=principal.role.value,
+        )
+    except AuthorizationError as exc:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
