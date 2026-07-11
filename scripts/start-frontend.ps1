@@ -1,4 +1,3 @@
-$ErrorActionPreference = "Stop"
-Set-Location "$PSScriptRoot\..\frontend"
-if (-not (Test-Path "node_modules")) { npm install }
-npm run dev
+﻿$ErrorActionPreference = "Stop"
+Set-Location "E:\superagent-sentinel-v2\frontend"
+npm run dev -- --host 127.0.0.1 --port 5173
