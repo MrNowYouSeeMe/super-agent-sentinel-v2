@@ -1,0 +1,44 @@
+{
+  "env_secret_file_tracked": false,
+  "tracked_secret_hits": [],
+  "missing_required_artifacts": [],
+  "model_status": {
+    "available": true,
+    "model_path": "E:\\superagent-sentinel-v2\\artifacts\\models\\phase6b\\phase6b_model_bundle.joblib",
+    "model_version": "phase6b-1.0.0",
+    "phase6c_metrics_available": true,
+    "openai_enabled": false,
+    "openai_key_configured": false,
+    "safety_boundary": "The trained model provides advisory scores and stakeholder routing only. A human reviewer remains the final decision maker."
+  },
+  "runtime_latency_ms": {
+    "runs": 20,
+    "mean": 25.215,
+    "p50": 24.986,
+    "p95": 25.986,
+    "max": 27.166
+  },
+  "api_security": {
+    "unauthorized_status": 401,
+    "authorized_status": 200
+  },
+  "openai_probe": {
+    "enabled": false,
+    "key_configured": false,
+    "mode": "deterministic_fallback",
+    "fallback_is_healthy": true
+  },
+  "decision_sample": {
+    "model_version": "phase6b-1.0.0",
+    "classification": "liquidity_pressure_with_unusual_activity",
+    "severity": "high",
+    "affected_resource": "shared_cash",
+    "primary_stakeholder": "area_manager",
+    "secondary_stakeholder": "risk_reviewer",
+    "human_review_required": true,
+    "explanation_mode": "deterministic_fallback"
+  },
+  "git_head": "1684f36",
+  "generated_at_utc": "2026-07-11T21:48:26.852698+00:00",
+  "overall_status": "PASS"
+}

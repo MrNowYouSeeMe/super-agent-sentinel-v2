@@ -29,6 +29,7 @@ from app.services.phase6b_runtime import (
     predict_phase6b,
 )
 from app.services.scenarios import ScenarioRunResponse, ScenarioSummary, list_scenarios, run_scenario
+from app.services.scope_redaction import redact_analysis_for_scope
 from app.services.validation_evidence import ValidationEvidenceReport, build_validation_evidence_report
 
 router = APIRouter(prefix="/api/v1")
@@ -155,7 +156,7 @@ def analyze_scoped(
     except AuthorizationError as exc:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
 
-    analysis = analyze(payload)
+    full_analysis = analyze(payload)
     all_resources = [payload.shared_cash.resource_id, *(provider.resource_id for provider in payload.providers)]
     visible = visible_resource_ids(
         principal,
@@ -164,10 +165,14 @@ def analyze_scoped(
         outlet_id=payload.outlet_id,
     )
     hidden_count = len(all_resources) - len(visible)
+    scoped = redact_analysis_for_scope(
+        full_analysis,
+        visible_resource_ids=visible,
+    )
     scope_policy = (
-        "Provider, area, and outlet scopes were enforced server-side. "
-        "Shared-cash coordination is visible only where the user's area/outlet scope allows it; "
-        "provider raw data remains restricted to scoped users."
+        "Provider, area, and outlet scopes are enforced server-side. "
+        "Hidden resources, evidence, decisions, explanations, and cases are redacted "
+        "before the response is serialized."
     )
     return ScopedAnalysisResponse(
         principal=principal_view(principal),
@@ -175,8 +180,8 @@ def analyze_scoped(
         hidden_resource_count=hidden_count,
         scope_policy=scope_policy,
         validation=validation,
-        analysis=analysis,
-        case=build_case_from_analysis(analysis),
+        analysis=scoped.analysis,
+        case=build_case_from_analysis(scoped.analysis) if scoped.case_allowed else None,
     )
 
 
