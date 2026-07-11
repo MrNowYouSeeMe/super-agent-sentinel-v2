@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-11T23:10:13.582133Z",
+  "structured_output_validation_rate": 1.0,
+  "degraded_feed_fallback_rate": 0.75,
+  "idempotency_duplicate_prevention_rate": 1.0,
+  "audit_chain_verification_rate": 1.0,
+  "provider_scope_guard_test_rate": 1.0,
+  "model_only_latency_p50_ms": 43.834,
+  "model_only_latency_p95_ms": 93.587,
+  "scenarios_tested": 28,
+  "notes": [
+    "Metrics use deterministic, synthetic local scenarios.",
+    "Model-only latency excludes external OpenAI network time.",
+    "Operational confidence is not presented as blind-test accuracy.",
+    "Provider-scope rate is a security test-matrix result, not model accuracy."
+  ]
+}
