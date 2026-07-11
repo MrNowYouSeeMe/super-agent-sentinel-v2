@@ -1,84 +1,122 @@
+﻿
 # SuperAgent Sentinel V2
 
-A clean rebuild of the multi-provider MFS liquidity and unusual-activity decision-support platform.
+Clean local-first rebuild for the multi-provider MFS liquidity and anomaly decision-support challenge.
 
-## Non-negotiable design rules
+This project is intentionally separate from the legacy/buggy repository. Legacy code is reference-only. The business logic comes from the challenge/problem statement, while reusable ideas from reference repositories are adapted carefully into a cleaner architecture.
 
-- The uploaded legacy project is **reference-only**. New implementation must not be added to that codebase.
-- Business rules come from the challenge/problem statement.
-- External repositories are used only after code, license, security, and relevance review.
-- The system never moves money, freezes accounts, or declares fraud.
-- Medium/high-risk or unreliable-data cases require human review.
-- Shared physical cash and provider-specific e-money balances are modeled separately.
+## What this prototype solves locally
 
-## Current V2 milestone
+- Shared physical-cash pool is modeled separately from provider e-money balances.
+- bKash, Nagad, and Rocket provider resources are evaluated separately.
+- Provider-wise shortage probability and estimated runway are shown.
+- Unusual activity signals are combined with liquidity pressure.
+- Stale, missing, or conflicting data lowers confidence.
+- Medium/high or degraded-confidence outputs create human-review cases.
+- Case workflow supports assignment, acknowledgement, review, escalation, and resolution.
+- Role, provider, area, and outlet scopes are enforced server-side.
+- Output language remains advisory: the system does not declare fraud or perform financial action.
 
-This repository starts with a working, dependency-light intelligence core:
+## Current local stack
 
-- provider-specific and shared-cash runway estimation;
-- shortage probability and time range;
-- anomaly rules for repeated amounts, customer concentration, cash-out pressure, and failures;
-- stale/conflicting-data confidence reduction;
-- safe decision fusion and human-review recommendation;
-- provider/area/outlet scoped authorization policy;
-- case workflow state machine;
-- FastAPI endpoint and a small React demo;
-- unit tests for the challenge-critical behavior.
+- Backend: FastAPI + Pydantic
+- Frontend: React + Vite
+- Tests: Pytest + TypeScript build
+- Local data/model prep: Python scripts
+- AI: local baseline artifact now; dataset training pipeline scaffold included
+- OpenAI: optional explanation polish only, never scoring or final decision
 
-Persistence, full login/refresh-token flows, Redis jobs, trained models, SHAP, and dataset training are intentionally added in later verified checkpoints.
+## Run locally
 
-## Project layout
+```powershell
+powershell -ExecutionPolicy Bypass -File "E:\superagent-sentinel-v2\scripts\start-all.ps1"
+```
+
+Open:
 
 ```text
-backend/                 FastAPI and domain logic
-frontend/                React/Vite local demo
-ml/                      training/evaluation modules (dataset added later)
-data/                    local datasets; raw data is git-ignored
-docs/                    architecture, coverage and source policy
-scripts/                 Windows local-run helpers
-legacy-reference/        manifest only; no legacy source imported
+Frontend:     http://127.0.0.1:5173
+Backend docs: http://127.0.0.1:8000/docs
 ```
 
-## Run locally on Windows
-
-### Backend
+## Verify locally
 
 ```powershell
-cd backend
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python -m uvicorn app.main:app --reload --port 8000
+cd E:\superagent-sentinel-v2\backend
+.\.venv\Scripts\python.exe -m pytest -q
+
+cd E:\superagent-sentinel-v2\frontend
+npm run build
 ```
 
-API docs: `http://127.0.0.1:8000/docs`
-
-### Tests
-
-```powershell
-cd backend
-.\.venv\Scripts\python.exe -m pytest
-```
-
-### Frontend
-
-```powershell
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend: `http://127.0.0.1:5173`
-
-## GitHub repository name
-
-Recommended remote name: `superagent-sentinel-v2`
-
-After extracting into `E:\superagent-sentinel-v2`:
+After the backend is running:
 
 ```powershell
 cd E:\superagent-sentinel-v2
-gh repo create superagent-sentinel-v2 --private --source . --remote origin --push
+.\backend\.venv\Scripts\python.exe scripts\local_smoke_test.py
 ```
 
-Use `--public` instead of `--private` only when you are ready to publish.
+## Main demo endpoints
+
+```text
+GET  /api/v1/health
+GET  /api/v1/demo/scenarios
+POST /api/v1/demo/scenarios/{scenario_id}
+GET  /api/v1/intelligence/model
+POST /api/v1/intelligence/analyze
+POST /api/v1/intelligence/analyze-scoped
+POST /api/v1/validation/check
+GET  /api/v1/demo/validation-evidence
+POST /api/v1/auth/demo-login
+POST /api/v1/cases/transition
+```
+
+## Demo users
+
+Use `/api/v1/auth/demo-users` to list local demo profiles.
+
+Important profiles:
+
+```text
+area-manager-sylhet
+bkash-ops-sylhet
+nagad-ops-sylhet
+risk-reviewer
+admin
+```
+
+## Dataset workflow
+
+Put uploaded datasets in:
+
+```text
+data/raw/
+```
+
+Create a mapping/feature template:
+
+```powershell
+cd E:\superagent-sentinel-v2
+.\backend\.venv\Scripts\python.exe scripts\prepare_dataset_template.py
+```
+
+Training scaffold:
+
+```powershell
+.\backend\.venv\Scripts\python.exe scripts\train_phase2_baseline.py data\processed\your_features.csv --output artifacts\models\mfs_phase2_trained.json
+```
+
+The current ML artifact is only a local baseline. Final metrics must come from the uploaded dataset.
+
+## Safety boundary
+
+The system never:
+
+- moves money;
+- transfers value between providers;
+- freezes accounts;
+- blocks customers;
+- declares fraud;
+- treats one provider as controlling another provider's balance.
+
+It provides risk evidence, confidence, explanation, and human-review workflow only.

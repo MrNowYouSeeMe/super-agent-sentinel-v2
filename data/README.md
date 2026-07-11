@@ -1,9 +1,11 @@
-# Data layout
+﻿
+# Data Folder
+
+Use this folder for local dataset work.
 
 ```text
-data/raw/          user-supplied immutable source data (git-ignored)
-data/processed/    reproducible derived datasets
-data/samples/      small synthetic/demo fixtures safe for Git
+data/raw/        raw uploaded datasets, ignored by Git except .gitkeep
+data/processed/  processed feature files and small templates
 ```
 
-Do not commit real credentials, customer PII, or private production transactions.
+Do not commit private or real customer data.
