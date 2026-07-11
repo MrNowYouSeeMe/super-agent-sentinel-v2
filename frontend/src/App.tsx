@@ -115,12 +115,13 @@ export default function App() {
         <h1>Multi-provider MFS liquidity and anomaly decision support</h1>
         <p>
           Shared physical cash stays separate from bKash, Nagad, and Rocket balances.
-          Phase 2 adds a dataset-ready local model layer, ML evidence, fused scores,
-          and safer confidence handling before human review.
+          Phase 3 adds demo authentication, provider/area/outlet-scoped authorization,
+          server-side scope enforcement, and safe human-review workflow boundaries.
         </p>
       </header>
 
       <section className="card scenario-card">
+        <p className="small-note">Auth demo endpoints: <code>/api/v1/auth/demo-users</code>, <code>/api/v1/auth/demo-login</code>, <code>/api/v1/intelligence/analyze-scoped</code>. Existing scenario buttons remain public for fast demo rehearsal.</p>
         <h2>Demo scenarios</h2>
         <div className="scenario-grid">
           {scenarios.map((scenario) => (
