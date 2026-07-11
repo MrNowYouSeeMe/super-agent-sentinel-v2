@@ -32,3 +32,15 @@ artifacts/models/*
 Thumbs.db
 
 *.tsbuildinfo
+
+# Professional local dataset layout
+data/source_archives/
+data/raw/
+data/private/
+data/reference/
+data/interim/
+data/manifests/*.csv
+data/manifests/*.json
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/mfs_training_template.csv
