@@ -50,3 +50,6 @@ artifacts/predictions/
 
 # Local Phase 9 audit and feedback
 runtime/
+.env
+.env.*
+!.env.example
