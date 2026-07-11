@@ -115,8 +115,8 @@ export default function App() {
         <h1>Multi-provider MFS liquidity and anomaly decision support</h1>
         <p>
           Shared physical cash stays separate from bKash, Nagad, and Rocket balances.
-          Phase 3 adds demo authentication, provider/area/outlet-scoped authorization,
-          server-side scope enforcement, and safe human-review workflow boundaries.
+          Phase 4 adds validation evidence, request safety checks, scoped case transitions,
+          and responsible AI guardrails for local demo review.
         </p>
       </header>
 
@@ -219,4 +219,5 @@ export default function App() {
     </main>
   );
 }
+
 

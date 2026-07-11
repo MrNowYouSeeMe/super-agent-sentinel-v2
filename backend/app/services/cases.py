@@ -1,6 +1,7 @@
-﻿from app.domain.cases.models import CaseEvent, CaseNote, CaseRecord
-from app.domain.cases.workflow import CaseStatus
-from app.domain.common.enums import Classification, Severity
+﻿
+from app.domain.cases.models import CaseEvent, CaseNote, CaseRecord
+from app.domain.cases.workflow import CaseAction, CaseStatus, next_status
+from app.domain.common.enums import Classification
 from app.services.intelligence import IntelligenceResponse
 
 
@@ -26,45 +27,19 @@ def build_case_from_analysis(analysis: IntelligenceResponse) -> CaseRecord | Non
             status=CaseStatus.OPEN,
             actor_role="system",
             event="case_opened",
-            note="Review-worthy intelligence result created a human review case.",
-        ),
-        CaseEvent(
-            sequence=2,
-            status=CaseStatus.ASSIGNED,
-            actor_role="system",
-            event="case_assigned",
-            note=f"Case assigned to {owner} based on severity and affected resource.",
-        ),
-    ]
-
-    current_status = CaseStatus.ASSIGNED
-    notes = [
-        CaseNote(
-            author_role="system",
-            note="No automated fund movement, account freeze, or fraud verdict was produced.",
+            note="Review-worthy intelligence result created a human-in-the-loop case.",
         )
     ]
-
+    current_status = CaseStatus.OPEN
     if analysis.decision.classification == Classification.DATA_QUALITY_ISSUE:
         current_status = CaseStatus.WAITING_FOR_DATA
         timeline.append(
             CaseEvent(
-                sequence=3,
+                sequence=2,
                 status=CaseStatus.WAITING_FOR_DATA,
-                actor_role=owner,
-                event="data_verification_requested",
-                note="Provider feed or reconciliation must be verified before escalation.",
-            )
-        )
-    elif analysis.decision.severity == Severity.HIGH:
-        current_status = CaseStatus.ACKNOWLEDGED
-        timeline.append(
-            CaseEvent(
-                sequence=3,
-                status=CaseStatus.ACKNOWLEDGED,
-                actor_role=owner,
-                event="case_acknowledged",
-                note="High-priority case requires immediate human review.",
+                actor_role="system",
+                event="data_verification_required",
+                note="Case is waiting for provider feed/reconciliation verification before escalation.",
             )
         )
 
@@ -78,7 +53,38 @@ def build_case_from_analysis(analysis: IntelligenceResponse) -> CaseRecord | Non
         owner_role=owner,
         recommended_action=analysis.decision.recommended_action,
         timeline=timeline,
-        notes=notes,
-        audit_summary="Complete audit path: detection, assignment, acknowledgement/data request, and safe human-review boundary.",
+        notes=[
+            CaseNote(
+                author_role="system",
+                note=analysis.explanation,
+            )
+        ],
+        audit_summary=(
+            "The case stores the original decision, evidence, current owner, "
+            "and timeline so a reviewer can audit why the alert was raised."
+        ),
     )
 
+
+def apply_case_action(
+    case: CaseRecord,
+    action: CaseAction,
+    *,
+    actor_role: str,
+    note: str,
+) -> CaseRecord:
+    target = next_status(case.current_status, action)
+    next_sequence = max((event.sequence for event in case.timeline), default=0) + 1
+    case.current_status = target
+    case.timeline.append(
+        CaseEvent(
+            sequence=next_sequence,
+            status=target,
+            actor_role=actor_role,
+            event=f"case_{action.value}",
+            note=note,
+        )
+    )
+    if note:
+        case.notes.append(CaseNote(author_role=actor_role, note=note))
+    return case

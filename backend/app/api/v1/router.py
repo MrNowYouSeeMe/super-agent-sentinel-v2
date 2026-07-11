@@ -1,9 +1,14 @@
-﻿from fastapi import APIRouter, Depends, HTTPException, status
-from pydantic import BaseModel
+﻿
+from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel, Field
 
 from app.api.v1.schemas import IntelligenceRequest
 from app.domain.auth.models import Permission, Principal
 from app.domain.auth.policy import AuthorizationError, authorize, visible_resource_ids
+from app.domain.cases.models import CaseRecord
+from app.domain.cases.workflow import CaseAction, WorkflowError
+from app.domain.validation.models import ValidationReport
+from app.domain.validation.service import validate_intelligence_request
 from app.services.auth import (
     AuthTokenResponse,
     DemoLoginRequest,
@@ -14,10 +19,11 @@ from app.services.auth import (
     list_demo_users,
     principal_view,
 )
-from app.services.cases import build_case_from_analysis
+from app.services.cases import apply_case_action, build_case_from_analysis
 from app.services.intelligence import IntelligenceResponse, analyze
 from app.services.ml_runtime import model_metadata
 from app.services.scenarios import ScenarioRunResponse, ScenarioSummary, list_scenarios, run_scenario
+from app.services.validation_evidence import ValidationEvidenceReport, build_validation_evidence_report
 
 router = APIRouter(prefix="/api/v1")
 
@@ -27,8 +33,30 @@ class ScopedAnalysisResponse(BaseModel):
     visible_resource_ids: list[str]
     hidden_resource_count: int
     scope_policy: str
+    validation: ValidationReport
     analysis: IntelligenceResponse
     case: object | None
+
+
+class CaseTransitionRequest(BaseModel):
+    case: CaseRecord
+    action: CaseAction
+    note: str = Field(min_length=2, max_length=500)
+
+
+class CaseTransitionResponse(BaseModel):
+    principal: PrincipalView
+    case: CaseRecord
+
+
+def _validate_or_422(payload: IntelligenceRequest) -> ValidationReport:
+    report = validate_intelligence_request(payload)
+    if not report.valid:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=report.model_dump(mode="json"),
+        )
+    return report
 
 
 @router.get("/health")
@@ -51,6 +79,16 @@ def auth_me(principal: Principal = Depends(current_principal)) -> PrincipalView:
     return principal_view(principal)
 
 
+@router.post("/validation/check", response_model=ValidationReport)
+def validation_check(payload: IntelligenceRequest) -> ValidationReport:
+    return validate_intelligence_request(payload)
+
+
+@router.get("/demo/validation-evidence", response_model=ValidationEvidenceReport)
+def validation_evidence() -> ValidationEvidenceReport:
+    return build_validation_evidence_report()
+
+
 @router.get("/intelligence/model")
 def intelligence_model() -> dict[str, object]:
     return model_metadata()
@@ -58,13 +96,15 @@ def intelligence_model() -> dict[str, object]:
 
 @router.post("/intelligence/analyze", response_model=IntelligenceResponse)
 def analyze_intelligence(payload: IntelligenceRequest) -> IntelligenceResponse:
+    _validate_or_422(payload)
     return analyze(payload)
 
 
 @router.post("/intelligence/analyze-with-case")
 def analyze_with_case(payload: IntelligenceRequest) -> dict[str, object]:
+    validation = _validate_or_422(payload)
     analysis = analyze(payload)
-    return {"analysis": analysis, "case": build_case_from_analysis(analysis)}
+    return {"validation": validation, "analysis": analysis, "case": build_case_from_analysis(analysis)}
 
 
 @router.post("/intelligence/analyze-scoped", response_model=ScopedAnalysisResponse)
@@ -72,6 +112,7 @@ def analyze_scoped(
     payload: IntelligenceRequest,
     principal: Principal = Depends(current_principal),
 ) -> ScopedAnalysisResponse:
+    validation = _validate_or_422(payload)
     try:
         authorize(
             principal,
@@ -101,9 +142,38 @@ def analyze_scoped(
         visible_resource_ids=visible,
         hidden_resource_count=hidden_count,
         scope_policy=scope_policy,
+        validation=validation,
         analysis=analysis,
         case=build_case_from_analysis(analysis),
     )
+
+
+@router.post("/cases/transition", response_model=CaseTransitionResponse)
+def transition_case(
+    payload: CaseTransitionRequest,
+    principal: Principal = Depends(current_principal),
+) -> CaseTransitionResponse:
+    provider_id = None if payload.case.affected_resource == "shared_cash" else payload.case.affected_resource
+    permission = Permission.CASE_ESCALATE if payload.action == CaseAction.ESCALATE else Permission.CASE_REVIEW
+    try:
+        authorize(
+            principal,
+            permission,
+            provider_id=provider_id,
+            area_id=payload.case.area_id,
+            outlet_id=payload.case.outlet_id,
+        )
+        updated = apply_case_action(
+            payload.case,
+            payload.action,
+            actor_role=principal.role.value,
+            note=payload.note,
+        )
+    except AuthorizationError as exc:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
+    except WorkflowError as exc:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
+    return CaseTransitionResponse(principal=principal_view(principal), case=updated)
 
 
 @router.get("/demo/scenarios", response_model=list[ScenarioSummary])
@@ -117,4 +187,3 @@ def demo_scenario(scenario_id: str) -> ScenarioRunResponse:
         return run_scenario(scenario_id)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
-
