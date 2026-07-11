@@ -18,10 +18,10 @@
 ## Local inference latency
 
 - Runs: 20
-- Mean: 25.215 ms
-- p50: 24.986 ms
-- p95: 25.986 ms
-- Max: 27.166 ms
+- Mean: 25.577 ms
+- p50: 25.524 ms
+- p95: 26.563 ms
+- Max: 27.009 ms
 
 ## OpenAI probe
 

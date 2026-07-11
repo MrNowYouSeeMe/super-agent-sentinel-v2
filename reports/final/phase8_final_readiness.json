@@ -13,10 +13,10 @@
   },
   "runtime_latency_ms": {
     "runs": 20,
-    "mean": 25.215,
-    "p50": 24.986,
-    "p95": 25.986,
-    "max": 27.166
+    "mean": 25.577,
+    "p50": 25.524,
+    "p95": 26.563,
+    "max": 27.009
   },
   "api_security": {
     "unauthorized_status": 401,
@@ -38,7 +38,7 @@
     "human_review_required": true,
     "explanation_mode": "deterministic_fallback"
   },
-  "git_head": "1684f36",
-  "generated_at_utc": "2026-07-11T21:48:26.852698+00:00",
+  "git_head": "e47a2ee",
+  "generated_at_utc": "2026-07-11T22:05:53.467602+00:00",
   "overall_status": "PASS"
 }
