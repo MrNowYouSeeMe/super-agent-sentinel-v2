@@ -1,0 +1,13 @@
+{
+  "evaluation_id": "phase6c-1.0.0",
+  "evaluated_at": "2026-07-11T21:22:39.950490+00:00",
+  "freeze_manifest_sha256": "8a8404da807598765bfa7d2fbb3409069313abfd1d62b00e4bd92a41326a4ad2",
+  "model_bundle_sha256": "6b3ad4acf76f4a74bc0a6621b4818f7995ea21214b1eca4fccb89df21ff0a8d7",
+  "prediction_sha256": "7f4fc94a824e3b625fa8222bc322cced03b513740bca215548e0651d5f983b2b",
+  "private_ground_truth_sha256": "12c8f21b46c2b3f8c79df6494707847f0d6569cea72795099c026264942cc4a9",
+  "metrics_sha256": "cf775df5729d1d2277b9edeefd4a0e342f7ccc26d168ba6a0558ef92e9854d42",
+  "report_sha256": "86d56e4df104eae64d78fe72e51f173037457416e65044acd9f5d0321229089f",
+  "retraining_performed": false,
+  "threshold_retuning_performed": false,
+  "next_step": "Integrate the frozen model bundle into the V2 API runtime and UI without changing Phase 6C metrics."
+}

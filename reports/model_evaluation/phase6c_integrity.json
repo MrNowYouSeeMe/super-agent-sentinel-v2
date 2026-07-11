@@ -1,0 +1,33 @@
+{
+  "evaluated_at": "2026-07-11T21:22:39.950469+00:00",
+  "prediction_rows": 48000,
+  "public_rows": 48000,
+  "private_rows": 48000,
+  "joined_rows": 48000,
+  "duplicate_key_counts": {
+    "predictions": 0,
+    "public": 0,
+    "private": 0
+  },
+  "public_private_alignment": {
+    "both": 48000
+  },
+  "prediction_alignment": {
+    "both": 48000
+  },
+  "frozen_hash_match": {
+    "model_bundle": true,
+    "metrics": true,
+    "feature_contract": true,
+    "blind_public_predictions": true
+  },
+  "probability_ranges_valid": true,
+  "shortage_monotonicity_violations": 0,
+  "eta_range_valid": true,
+  "model_versions": [
+    "phase6b-1.0.0"
+  ],
+  "retraining_performed": false,
+  "threshold_retuning_performed": false,
+  "private_labels_opened_only_after_freeze_verification": true
+}

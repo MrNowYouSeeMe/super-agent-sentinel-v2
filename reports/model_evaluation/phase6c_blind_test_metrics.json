@@ -1,0 +1,379 @@
+{
+  "evaluation_name": "phase6c-frozen-blind-test",
+  "evaluated_at": "2026-07-11T21:22:39.950490+00:00",
+  "integrity": {
+    "evaluated_at": "2026-07-11T21:22:39.950469+00:00",
+    "prediction_rows": 48000,
+    "public_rows": 48000,
+    "private_rows": 48000,
+    "joined_rows": 48000,
+    "duplicate_key_counts": {
+      "predictions": 0,
+      "public": 0,
+      "private": 0
+    },
+    "public_private_alignment": {
+      "both": 48000
+    },
+    "prediction_alignment": {
+      "both": 48000
+    },
+    "frozen_hash_match": {
+      "model_bundle": true,
+      "metrics": true,
+      "feature_contract": true,
+      "blind_public_predictions": true
+    },
+    "probability_ranges_valid": true,
+    "shortage_monotonicity_violations": 0,
+    "eta_range_valid": true,
+    "model_versions": [
+      "phase6b-1.0.0"
+    ],
+    "retraining_performed": false,
+    "threshold_retuning_performed": false,
+    "private_labels_opened_only_after_freeze_verification": true
+  },
+  "tasks": {
+    "anomaly": {
+      "rows": 48000,
+      "positive_support": 16495,
+      "negative_support": 31505,
+      "prevalence": 0.3436458333333333,
+      "predicted_positive_rate": 0.3078958333333333,
+      "true_negative": 30493,
+      "false_positive": 1012,
+      "false_negative": 2728,
+      "true_positive": 13767,
+      "precision": 0.9315244603829759,
+      "recall": 0.8346165504698393,
+      "f1": 0.8804118437040352,
+      "f2": 0.8523508215802573,
+      "accuracy": 0.9220833333333334,
+      "balanced_accuracy": 0.9012473325274128,
+      "false_positive_rate": 0.03212188541501349,
+      "false_negative_rate": 0.16538344953016065,
+      "specificity": 0.9678781145849865,
+      "brier_score": 0.07600893209398239,
+      "expected_calibration_error_10_bin": 0.071923070960625,
+      "pr_auc": 0.9336205646101077,
+      "roc_auc": 0.9346828544129916
+    },
+    "shortage_30m": {
+      "rows": 48000,
+      "positive_support": 2928,
+      "negative_support": 45072,
+      "prevalence": 0.061,
+      "predicted_positive_rate": 0.06802083333333334,
+      "true_negative": 44284,
+      "false_positive": 788,
+      "false_negative": 451,
+      "true_positive": 2477,
+      "precision": 0.7586523736600306,
+      "recall": 0.8459699453551912,
+      "f1": 0.7999354109478444,
+      "f2": 0.826934633104093,
+      "accuracy": 0.9741875,
+      "balanced_accuracy": 0.9142434036325122,
+      "false_positive_rate": 0.017483138090166845,
+      "false_negative_rate": 0.15403005464480873,
+      "specificity": 0.9825168619098331,
+      "brier_score": 0.016844103783440787,
+      "expected_calibration_error_10_bin": 0.009377590151666667,
+      "pr_auc": 0.8895512937713604,
+      "roc_auc": 0.9791267449615527
+    },
+    "shortage_60m": {
+      "rows": 48000,
+      "positive_support": 4700,
+      "negative_support": 43300,
+      "prevalence": 0.09791666666666667,
+      "predicted_positive_rate": 0.09004166666666667,
+      "true_negative": 42198,
+      "false_positive": 1102,
+      "false_negative": 1480,
+      "true_positive": 3220,
+      "precision": 0.7450254511800093,
+      "recall": 0.6851063829787234,
+      "f1": 0.7138106849922412,
+      "f2": 0.6963065478764813,
+      "accuracy": 0.9462083333333333,
+      "balanced_accuracy": 0.8298280182792,
+      "false_positive_rate": 0.025450346420323327,
+      "false_negative_rate": 0.3148936170212766,
+      "specificity": 0.9745496535796767,
+      "brier_score": 0.04116075444024769,
+      "expected_calibration_error_10_bin": 0.02000808802395833,
+      "pr_auc": 0.7663753472627807,
+      "roc_auc": 0.9206417522480469
+    },
+    "shortage_120m": {
+      "rows": 48000,
+      "positive_support": 7107,
+      "negative_support": 40893,
+      "prevalence": 0.1480625,
+      "predicted_positive_rate": 0.10791666666666666,
+      "true_negative": 39398,
+      "false_positive": 1495,
+      "false_negative": 3422,
+      "true_positive": 3685,
+      "precision": 0.7113899613899614,
+      "recall": 0.5185028844800901,
+      "f1": 0.5998209489704566,
+      "f2": 0.5482325636753154,
+      "accuracy": 0.8975625,
+      "balanced_accuracy": 0.7409720301157205,
+      "false_positive_rate": 0.03655882424864891,
+      "false_negative_rate": 0.4814971155199099,
+      "specificity": 0.9634411757513511,
+      "brier_score": 0.08093673472640375,
+      "expected_calibration_error_10_bin": 0.044243852370833336,
+      "pr_auc": 0.6540931771881554,
+      "roc_auc": 0.8388914266817968
+    },
+    "data_quality_verification": {
+      "rows": 48000,
+      "positive_support": 12817,
+      "negative_support": 35183,
+      "prevalence": 0.2670208333333333,
+      "predicted_positive_rate": 0.08254166666666667,
+      "true_negative": 35183,
+      "false_positive": 0,
+      "false_negative": 8855,
+      "true_positive": 3962,
+      "precision": 1.0,
+      "recall": 0.3091206990715456,
+      "f1": 0.4722569879015436,
+      "f2": 0.35868187579214195,
+      "accuracy": 0.8155208333333334,
+      "balanced_accuracy": 0.6545603495357728,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.6908793009284544,
+      "specificity": 1.0,
+      "brier_score": 0.190772599423125,
+      "expected_calibration_error_10_bin": 0.21410511875000002,
+      "pr_auc": 0.7958535007515308,
+      "roc_auc": 0.8191105189926039
+    }
+  },
+  "eta": {
+    "rows": 7107,
+    "mae_minutes": 14.462432812719856,
+    "rmse_minutes": 20.58421095454178,
+    "median_absolute_error_minutes": 10.168,
+    "within_15_minutes_rate": 0.6044744617982271,
+    "within_30_minutes_rate": 0.8407204164907838
+  },
+  "affected_service": {
+    "evaluated_rows": 7107,
+    "accuracy": 0.44322498944702404,
+    "by_service": [
+      {
+        "service": "shared_cash",
+        "actual_shortage_rows": 4821,
+        "correct_service_predictions": 2481,
+        "service_recall": 0.5146235220908525,
+        "shortage_120m_recall": 0.5158680771624145
+      },
+      {
+        "service": "bkash",
+        "actual_shortage_rows": 794,
+        "correct_service_predictions": 354,
+        "service_recall": 0.44584382871536526,
+        "shortage_120m_recall": 0.5642317380352645
+      },
+      {
+        "service": "nagad",
+        "actual_shortage_rows": 798,
+        "correct_service_predictions": 226,
+        "service_recall": 0.2832080200501253,
+        "shortage_120m_recall": 0.5037593984962406
+      },
+      {
+        "service": "rocket",
+        "actual_shortage_rows": 694,
+        "correct_service_predictions": 89,
+        "service_recall": 0.1282420749279539,
+        "shortage_120m_recall": 0.5014409221902018
+      }
+    ]
+  },
+  "anomaly_type": {
+    "evaluated_rows": 16495,
+    "accuracy": 0.0
+  },
+  "human_review": {
+    "rows": 48000,
+    "positive_support": 17648,
+    "negative_support": 30352,
+    "prevalence": 0.36766666666666664,
+    "predicted_positive_rate": 0.3189375,
+    "true_negative": 29148,
+    "false_positive": 1204,
+    "false_negative": 3543,
+    "true_positive": 14105,
+    "precision": 0.9213534522176497,
+    "recall": 0.7992407071622847,
+    "f1": 0.855963831659435,
+    "f2": 0.8210032479249368,
+    "accuracy": 0.9011041666666667,
+    "balanced_accuracy": 0.879786405241659,
+    "false_positive_rate": 0.03966789667896679,
+    "false_negative_rate": 0.20075929283771532,
+    "specificity": 0.9603321033210332,
+    "brier_score": 0.08477809310469671,
+    "expected_calibration_error_10_bin": 0.060063892386666665,
+    "pr_auc": 0.918587631591388,
+    "roc_auc": 0.9147333729466075
+  },
+  "stakeholder_routing": {
+    "primary_accuracy": 0.7429166666666667,
+    "secondary_accuracy": 0.8529375,
+    "exact_route_accuracy": 0.7396666666666667,
+    "policy": "deterministic, scope-aware, human-controlled"
+  },
+  "validation_to_blind_retention": {
+    "anomaly": {
+      "precision": {
+        "blind": 0.9315244603829759,
+        "validation": 0.899085,
+        "retention_ratio": 1.0360805267388242,
+        "advisory_status": "stable"
+      },
+      "recall": {
+        "blind": 0.8346165504698393,
+        "validation": 0.753194,
+        "retention_ratio": 1.1081030258735987,
+        "advisory_status": "stable"
+      },
+      "f2": {
+        "blind": 0.8523508215802573,
+        "validation": 0.778458,
+        "retention_ratio": 1.0949220402131616,
+        "advisory_status": "stable"
+      },
+      "pr_auc": {
+        "blind": 0.9336205646101077,
+        "validation": 0.880707,
+        "retention_ratio": 1.060080781247461,
+        "advisory_status": "stable"
+      },
+      "false_positive_rate": {
+        "blind": 0.03212188541501349,
+        "validation": 0.029364,
+        "advisory_limit": 0.07341,
+        "advisory_status": "stable"
+      }
+    },
+    "shortage_30m": {
+      "precision": {
+        "blind": 0.7586523736600306,
+        "validation": 0.741851,
+        "retention_ratio": 1.0226479086232014,
+        "advisory_status": "stable"
+      },
+      "recall": {
+        "blind": 0.8459699453551912,
+        "validation": 0.842963,
+        "retention_ratio": 1.0035671142804503,
+        "advisory_status": "stable"
+      },
+      "f2": {
+        "blind": 0.826934633104093,
+        "validation": 0.820594,
+        "retention_ratio": 1.0077268821172138,
+        "advisory_status": "stable"
+      },
+      "pr_auc": {
+        "blind": 0.8895512937713604,
+        "validation": 0.878067,
+        "retention_ratio": 1.0130790631823772,
+        "advisory_status": "stable"
+      },
+      "false_positive_rate": {
+        "blind": 0.017483138090166845,
+        "validation": 0.011288,
+        "advisory_limit": 0.05,
+        "advisory_status": "stable"
+      }
+    },
+    "shortage_60m": {
+      "precision": {
+        "blind": 0.7450254511800093,
+        "validation": 0.743326,
+        "retention_ratio": 1.0022862797480638,
+        "advisory_status": "stable"
+      },
+      "recall": {
+        "blind": 0.6851063829787234,
+        "validation": 0.680451,
+        "retention_ratio": 1.006841613839532,
+        "advisory_status": "stable"
+      },
+      "f2": {
+        "blind": 0.6963065478764813,
+        "validation": 0.692161,
+        "retention_ratio": 1.0059892826618102,
+        "advisory_status": "stable"
+      },
+      "pr_auc": {
+        "blind": 0.7663753472627807,
+        "validation": 0.751741,
+        "retention_ratio": 1.0194672729873462,
+        "advisory_status": "stable"
+      },
+      "false_positive_rate": {
+        "blind": 0.025450346420323327,
+        "validation": 0.014576,
+        "advisory_limit": 0.05,
+        "advisory_status": "stable"
+      }
+    },
+    "shortage_120m": {
+      "precision": {
+        "blind": 0.7113899613899614,
+        "validation": 0.675283,
+        "retention_ratio": 1.05346937712035,
+        "advisory_status": "stable"
+      },
+      "recall": {
+        "blind": 0.5185028844800901,
+        "validation": 0.520548,
+        "retention_ratio": 0.9960712258621492,
+        "advisory_status": "stable"
+      },
+      "f2": {
+        "blind": 0.5482325636753154,
+        "validation": 0.545549,
+        "retention_ratio": 1.0049190149286598,
+        "advisory_status": "stable"
+      },
+      "pr_auc": {
+        "blind": 0.6540931771881554,
+        "validation": 0.63177,
+        "retention_ratio": 1.035334341909485,
+        "advisory_status": "stable"
+      },
+      "false_positive_rate": {
+        "blind": 0.03655882424864891,
+        "validation": 0.024202,
+        "advisory_limit": 0.060505,
+        "advisory_status": "stable"
+      }
+    }
+  },
+  "safety": {
+    "ai_final_decision_maker": false,
+    "automatic_money_movement": false,
+    "automatic_provider_transfer": false,
+    "automatic_freeze_or_block": false,
+    "fraud_verdict": false,
+    "human_review_required_for_flagged_outputs": true
+  },
+  "limitations": [
+    "This is a synthetic blind-test evaluation, not a real financial production certification.",
+    "Private labels were used only after model, feature contract, thresholds, and prediction hashes were frozen.",
+    "No model retraining or threshold retuning was performed in Phase 6C.",
+    "Operational rollout still requires real-data monitoring, drift checks, privacy review, and human governance."
+  ]
+}
