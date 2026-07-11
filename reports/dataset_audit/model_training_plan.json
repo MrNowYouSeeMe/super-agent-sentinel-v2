@@ -1,0 +1,132 @@
+{
+  "principles": [
+    "AI produces scores/evidence, not final financial decisions.",
+    "Input validation and output validation wrap every model.",
+    "Data-quality state controls confidence and routing.",
+    "Private blind-test labels remain untouched until all models, features, thresholds, and fusion rules are frozen.",
+    "Provider boundaries are preserved in features, outputs, and stakeholder visibility."
+  ],
+  "model_tasks": [
+    {
+      "task": "Anomaly review classifier",
+      "target": "is_unusual",
+      "preferred_fast_models": [
+        "LightGBM/CatBoost if available",
+        "HistGradientBoosting fallback",
+        "logistic rule baseline"
+      ],
+      "special_handling": [
+        "class weights",
+        "hard-negative sampling",
+        "label_confidence sample weights",
+        "group/time validation"
+      ],
+      "metrics": [
+        "precision",
+        "recall",
+        "F1",
+        "PR-AUC",
+        "hard-negative FPR"
+      ]
+    },
+    {
+      "task": "Shortage classifiers",
+      "target": "shortage_within_30m, shortage_within_60m, shortage_within_120m",
+      "preferred_fast_models": [
+        "LightGBM/CatBoost",
+        "HistGradientBoosting fallback"
+      ],
+      "metrics": [
+        "precision",
+        "recall",
+        "F1",
+        "PR-AUC",
+        "Brier score",
+        "calibration"
+      ]
+    },
+    {
+      "task": "Runway regression",
+      "target": "actual_time_to_shortage_minutes on positive/finite rows",
+      "preferred_fast_models": [
+        "gradient boosting regressor",
+        "quantile models for ETA interval"
+      ],
+      "metrics": [
+        "MAE",
+        "median absolute error",
+        "interval coverage"
+      ]
+    },
+    {
+      "task": "Affected resource selection",
+      "target": "derived provider-specific shortage flags + affected_service evaluation",
+      "preferred_fast_models": [
+        "separate per-resource models",
+        "deterministic argmax/rule fusion"
+      ],
+      "metrics": [
+        "macro F1",
+        "provider-wise recall",
+        "shared-cash vs provider confusion"
+      ]
+    },
+    {
+      "task": "Data-quality gate",
+      "target": "not learned as final decision",
+      "preferred_fast_models": [
+        "deterministic validation/rules"
+      ],
+      "metrics": [
+        "stale/conflict detection coverage",
+        "safe-degradation rate"
+      ]
+    }
+  ],
+  "feature_policy": {
+    "include": [
+      "current/past operational features",
+      "provider-specific balances and burns",
+      "shared-cash balance and burns",
+      "transaction velocity/concentration/failure features",
+      "context flags and agent profile",
+      "feed/reconciliation/data-quality features"
+    ],
+    "exclude": [
+      "future_* columns",
+      "target/ground-truth columns",
+      "review_priority/severity/evidence_codes when predicting risk",
+      "approved_*_support_amount intervention columns",
+      "raw IDs as unconstrained numeric features"
+    ]
+  },
+  "validation_split": [
+    "Use provided 2024-2025 train/validation split for development.",
+    "Add group checks by agent and peer group to measure memorization.",
+    "Use 2026-H1 public features only for frozen blind predictions.",
+    "Use private labels once for final evaluation after freeze."
+  ],
+  "speed_strategy": [
+    "Train on compact 5-minute feature tables, not raw transaction events.",
+    "Use column pruning and compact dtypes.",
+    "Use episode-aware weighted sampling for rapid experiments, then final full-data fit.",
+    "Train independent task heads/models in parallel where practical.",
+    "Serialize lightweight CPU artifacts and precompute categorical encodings.",
+    "Call OpenAI only for review-worthy explanation, never per row or for scoring."
+  ],
+  "synthetic_gap_policy": [
+    "Only add synthetic rows when a scenario/provider/context is demonstrably underrepresented.",
+    "Tag every augmented row with augmentation_source and scenario_source.",
+    "Generate augmentation from train assumptions only; never use blind private labels.",
+    "Keep original and augmented metrics separate.",
+    "Prefer derived features before generating more rows."
+  ],
+  "stakeholder_routing": [
+    "Provider liquidity -> area manager + affected provider operations.",
+    "Shared-cash pressure -> area manager + outlet operator.",
+    "Unusual activity -> risk/compliance reviewer.",
+    "Liquidity + anomaly -> joint area manager and risk review.",
+    "Stale/conflicting feed -> data/provider operations before escalation.",
+    "High-severity cross-area pattern -> central operations/management."
+  ]
+}
